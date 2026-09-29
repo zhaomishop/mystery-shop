@@ -12,6 +12,25 @@ const CONFIG = {
 let currentData = null;
 let fileSha = null;
 
+// 数据迁移：旧格式 refreshCode -> 新格式 refreshCodes 数组
+function migrateData(data) {
+  if (!data.refreshCodes) {
+    if (data.refreshCode) {
+      const cnt = data.refreshCount || 0;
+      data.refreshCodes = [{ code: data.refreshCode, uses: Math.max(0, 10 - cnt), maxUses: Math.max(0, 10 - cnt) }];
+    } else {
+      data.refreshCodes = [];
+    }
+    delete data.refreshCode;
+  }
+  data.refreshCodes = (data.refreshCodes || []).map(c => ({
+    code: c.code || '',
+    uses: c.uses != null ? c.uses : (c.maxUses || 0),
+    maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
+  }));
+  if (data.refreshCount == null) data.refreshCount = 0;
+}
+
 // ========== GitHub API ==========
 async function fetchData() {
   try {
@@ -25,6 +44,7 @@ async function fetchData() {
       for (let i = 0; i < decoded.length; i++) bytes[i] = decoded.charCodeAt(i);
       currentData = JSON.parse(new TextDecoder('utf-8').decode(bytes));
       fileSha = json.sha;
+      migrateData(currentData);
       return currentData;
     }
   } catch (e) {
@@ -68,10 +88,64 @@ function render() {
 
   document.getElementById('titleInput').value = currentData.title || '';
   document.getElementById('subtitleInput').value = currentData.subtitle || '';
-  document.getElementById('codeInput').value = currentData.refreshCode || '';
   document.getElementById('countDisplay').textContent = currentData.refreshCount || 0;
 
   renderPrizeList();
+  renderCodeList();
+}
+
+function renderCodeList() {
+  const list = document.getElementById('codeList');
+  list.innerHTML = '';
+
+  // 表头
+  const header = document.createElement('div');
+  header.className = 'prize-header';
+  header.innerHTML = `
+    <span class="col-code">口令</span>
+    <span class="col-max">可用次数</span>
+    <span class="col-remain">剩余</span>
+    <span class="col-actions">操作</span>
+  `;
+  list.appendChild(header);
+
+  const codes = currentData.refreshCodes || [];
+  codes.forEach((c, idx) => {
+    const item = document.createElement('div');
+    item.className = 'code-item';
+    item.innerHTML = `
+      <input type="text" class="code-text" value="${c.code || ''}" placeholder="输入口令">
+      <input type="number" class="code-max" value="${c.maxUses || 0}" min="0" placeholder="0">
+      <span class="remain-badge ${(c.uses || 0) === 0 ? 'empty' : ''}">${c.uses || 0}</span>
+      <div class="code-actions">
+        <button class="btn-small btn-move" data-idx="${idx}" data-dir="up" title="上移">▲</button>
+        <button class="btn-small btn-move" data-idx="${idx}" data-dir="down" title="下移">▼</button>
+        <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
+      </div>
+    `;
+    list.appendChild(item);
+  });
+
+  // 删除
+  list.querySelectorAll('.btn-del').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.dataset.idx);
+      currentData.refreshCodes.splice(idx, 1);
+      renderCodeList();
+    });
+  });
+
+  // 上移/下移
+  list.querySelectorAll('.btn-move').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.dataset.idx);
+      const dir = e.target.dataset.dir;
+      const target = dir === 'up' ? idx - 1 : idx + 1;
+      if (target < 0 || target >= currentData.refreshCodes.length) return;
+      [currentData.refreshCodes[idx], currentData.refreshCodes[target]] = [currentData.refreshCodes[target], currentData.refreshCodes[idx]];
+      renderCodeList();
+    });
+  });
 }
 
 function qualityColor(q) {
@@ -151,7 +225,6 @@ function renderPrizeList() {
 function collectFormData() {
   currentData.title = document.getElementById('titleInput').value.trim() || '神秘商店';
   currentData.subtitle = document.getElementById('subtitleInput').value.trim();
-  currentData.refreshCode = document.getElementById('codeInput').value.trim();
 
   // 收集奖品列表
   const items = document.querySelectorAll('.prize-item');
@@ -161,6 +234,18 @@ function collectFormData() {
     name: item.querySelector('.prize-name').value.trim() || `奖品${idx + 1}`,
     quality: Math.min(10, Math.max(1, parseInt(item.querySelector('.prize-quality').value) || 1))
   }));
+
+  // 收集口令列表
+  const codeItems = document.querySelectorAll('.code-item');
+  const oldCodes = currentData.refreshCodes || [];
+  currentData.refreshCodes = Array.from(codeItems).map((item, idx) => {
+    const code = item.querySelector('.code-text').value.trim();
+    const maxUses = Math.max(0, parseInt(item.querySelector('.code-max').value) || 0);
+    // 保留原剩余次数，不超过新的 maxUses
+    const oldUses = (oldCodes[idx] && oldCodes[idx].uses) || 0;
+    const uses = Math.min(oldUses, maxUses);
+    return { code, uses, maxUses };
+  }).filter(c => c.code); // 过滤掉空口令
 
   return currentData;
 }
@@ -176,6 +261,13 @@ document.getElementById('btnAddPrize').addEventListener('click', () => {
   renderPrizeList();
 });
 
+// 添加口令
+document.getElementById('btnAddCode').addEventListener('click', () => {
+  if (!currentData.refreshCodes) currentData.refreshCodes = [];
+  currentData.refreshCodes.push({ code: '', uses: 1, maxUses: 1 });
+  renderCodeList();
+});
+
 document.getElementById('btnAddCount').addEventListener('click', () => {
   currentData.refreshCount = (currentData.refreshCount || 0) + 1;
   document.getElementById('countDisplay').textContent = currentData.refreshCount;
@@ -187,22 +279,30 @@ document.getElementById('btnAddCount5').addEventListener('click', () => {
 });
 
 document.getElementById('btnResetCount').addEventListener('click', () => {
-  if (confirm('确定要将刷新次数重置为0吗？')) {
+  if (confirm('确定要将累计刷新次数清零吗？')) {
     currentData.refreshCount = 0;
     document.getElementById('countDisplay').textContent = 0;
   }
 });
 
 document.getElementById('btnResetPool').addEventListener('click', async () => {
-  if (!confirm('确定要重置奖池到未开启状态吗？')) return;
+  if (!confirm('确定要重置奖池吗？\n\n九宫格将恢复未开启状态，\n累计刷新次数清零，\n所有口令次数恢复为设定值。')) return;
 
   collectFormData();
   currentData.opened = false;
   currentData.currentGrid = [null, null, null, null, null, null, null, null, null];
+  // 累计刷新次数清零
+  currentData.refreshCount = 0;
+  // 所有口令次数恢复为设定值
+  (currentData.refreshCodes || []).forEach(c => { c.uses = c.maxUses || 0; });
 
   const ok = await saveData(currentData);
-  if (ok) showToast('奖池已重置为未开启状态');
-  else showToast('重置失败');
+  if (ok) {
+    showToast('奖池已重置，口令次数已恢复');
+    render();
+  } else {
+    showToast('重置失败');
+  }
 });
 
 document.getElementById('btnSave').addEventListener('click', async () => {
