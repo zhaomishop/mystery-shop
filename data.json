@@ -311,9 +311,9 @@
     },
     {
       "id": 48,
-      "icon": "🎁",
+      "icon": "💝",
       "name": "新奖品",
-      "quality": 1
+      "quality": 6
     },
     {
       "id": 49,
@@ -323,9 +323,9 @@
     },
     {
       "id": 50,
-      "icon": "🎁",
+      "icon": "🌈",
       "name": "新奖品",
-      "quality": 1
+      "quality": 9
     }
   ]
 }
