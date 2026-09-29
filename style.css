@@ -649,6 +649,60 @@ body::before {
   text-decoration: none;
 }
 
+/* 登录界面 */
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.login-icon {
+  font-size: 3em;
+  margin-bottom: 12px;
+}
+
+.login-box h2 {
+  color: #ffd700;
+  margin-bottom: 6px;
+  font-size: 1.2em;
+}
+
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.login-box input[type="password"]:focus {
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 0.85em;
+  margin-top: 10px;
+  min-height: 1.2em;
+}
+
 .loading {
   text-align: center;
   padding: 40px;
