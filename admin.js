@@ -235,16 +235,12 @@ function collectFormData() {
     quality: Math.min(10, Math.max(1, parseInt(item.querySelector('.prize-quality').value) || 1))
   }));
 
-  // 收集口令列表
+  // 收集口令列表（保存时剩余次数重置为设定的可用次数）
   const codeItems = document.querySelectorAll('.code-item');
-  const oldCodes = currentData.refreshCodes || [];
-  currentData.refreshCodes = Array.from(codeItems).map((item, idx) => {
+  currentData.refreshCodes = Array.from(codeItems).map((item) => {
     const code = item.querySelector('.code-text').value.trim();
     const maxUses = Math.max(0, parseInt(item.querySelector('.code-max').value) || 0);
-    // 保留原剩余次数，不超过新的 maxUses
-    const oldUses = (oldCodes[idx] && oldCodes[idx].uses) || 0;
-    const uses = Math.min(oldUses, maxUses);
-    return { code, uses, maxUses };
+    return { code, uses: maxUses, maxUses };
   }).filter(c => c.code); // 过滤掉空口令
 
   return currentData;
