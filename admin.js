@@ -74,29 +74,75 @@ function render() {
   renderPrizeList();
 }
 
+function qualityColor(q) {
+  const colors = ['#888', '#9ca3af', '#6b7280', '#4ade80', '#22c55e', '#3b82f6', '#a855f7', '#f59e0b', '#ef4444', '#ec4899', '#fbbf24'];
+  return colors[Math.min(10, Math.max(0, q))] || '#888';
+}
+
 function renderPrizeList() {
   const list = document.getElementById('prizeList');
   list.innerHTML = '';
 
+  // 表头
+  const header = document.createElement('div');
+  header.className = 'prize-header';
+  header.innerHTML = `
+    <span class="col-icon">图标</span>
+    <span class="col-name">奖品名称</span>
+    <span class="col-quality">品质</span>
+    <span class="col-actions">操作</span>
+  `;
+  list.appendChild(header);
+
   const prizes = currentData.prizes || [];
   prizes.forEach((prize, idx) => {
+    const q = prize.quality || 1;
     const item = document.createElement('div');
     item.className = 'prize-item';
     item.innerHTML = `
-      <input type="text" class="prize-icon" value="${prize.icon || ''}" placeholder="图标" maxlength="4">
+      <input type="text" class="prize-icon" value="${prize.icon || ''}" placeholder="🎁" maxlength="4">
       <input type="text" class="prize-name" value="${prize.name || ''}" placeholder="奖品名称">
-      <input type="number" class="prize-quality" value="${prize.quality || 1}" min="1" max="10" placeholder="品质">
-      <button class="btn-small btn-del" data-idx="${idx}">删除</button>
+      <div class="prize-quality-wrap">
+        <input type="number" class="prize-quality" value="${q}" min="1" max="10" placeholder="1">
+        <span class="quality-badge" style="background:${qualityColor(q)}">Q${q}</span>
+      </div>
+      <div class="prize-actions">
+        <button class="btn-small btn-move" data-idx="${idx}" data-dir="up" title="上移">▲</button>
+        <button class="btn-small btn-move" data-idx="${idx}" data-dir="down" title="下移">▼</button>
+        <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
+      </div>
     `;
     list.appendChild(item);
   });
 
-  // 绑定删除事件
+  // 删除
   list.querySelectorAll('.btn-del').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const idx = parseInt(e.target.dataset.idx);
       currentData.prizes.splice(idx, 1);
       renderPrizeList();
+    });
+  });
+
+  // 上移/下移
+  list.querySelectorAll('.btn-move').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.dataset.idx);
+      const dir = e.target.dataset.dir;
+      const target = dir === 'up' ? idx - 1 : idx + 1;
+      if (target < 0 || target >= currentData.prizes.length) return;
+      [currentData.prizes[idx], currentData.prizes[target]] = [currentData.prizes[target], currentData.prizes[idx]];
+      renderPrizeList();
+    });
+  });
+
+  // 品质输入变化时更新徽章颜色
+  list.querySelectorAll('.prize-quality').forEach(input => {
+    input.addEventListener('input', (e) => {
+      const badge = e.target.parentElement.querySelector('.quality-badge');
+      const val = Math.min(10, Math.max(1, parseInt(e.target.value) || 1));
+      badge.style.background = qualityColor(val);
+      badge.textContent = 'Q' + val;
     });
   });
 }
