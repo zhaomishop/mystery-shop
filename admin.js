@@ -12,6 +12,10 @@ const CONFIG = {
 let currentData = null;
 let fileSha = null;
 
+// 管理员后台密码
+const ADMIN_PASSWORD = 'yg666';
+const AUTH_KEY = 'mystery_shop_admin_auth';
+
 // 数据迁移：旧格式 refreshCode -> 新格式 refreshCodes 数组
 function migrateData(data) {
   if (!data.refreshCodes) {
@@ -316,15 +320,69 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
+// ========== 登录验证 ==========
+function isAuthed() {
+  return sessionStorage.getItem(AUTH_KEY) === '1';
+}
+
+function showLogin() {
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('adminContent').style.display = 'none';
+  document.getElementById('loading').style.display = 'none';
+}
+
+function hideLogin() {
+  document.getElementById('loginScreen').style.display = 'none';
+}
+
+function handleLogin() {
+  const input = document.getElementById('adminPassword');
+  const err = document.getElementById('loginError');
+  if (input.value === ADMIN_PASSWORD) {
+    sessionStorage.setItem(AUTH_KEY, '1');
+    err.textContent = '';
+    hideLogin();
+    enterAdmin();
+  } else {
+    err.textContent = '密码错误，请重试';
+    input.value = '';
+    input.focus();
+  }
+}
+
+function handleLogout() {
+  sessionStorage.removeItem(AUTH_KEY);
+  showLogin();
+  document.getElementById('adminPassword').value = '';
+}
+
 // ========== 初始化 ==========
-async function init() {
+async function enterAdmin() {
+  document.getElementById('loading').style.display = 'block';
   const data = await fetchData();
+  document.getElementById('loading').style.display = 'none';
   if (data) {
-    document.getElementById('loading').style.display = 'none';
     document.getElementById('adminContent').style.display = 'block';
     render();
   } else {
+    document.getElementById('loading').style.display = 'block';
     document.getElementById('loading').textContent = '数据加载失败，请刷新重试';
+  }
+}
+
+async function init() {
+  // 绑定登录事件
+  document.getElementById('btnLogin').addEventListener('click', handleLogin);
+  document.getElementById('adminPassword').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') handleLogin();
+  });
+  document.getElementById('btnLogout').addEventListener('click', handleLogout);
+
+  if (isAuthed()) {
+    hideLogin();
+    enterAdmin();
+  } else {
+    showLogin();
   }
 }
 
