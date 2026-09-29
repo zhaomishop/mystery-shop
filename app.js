@@ -86,6 +86,12 @@ async function saveData(data) {
 
 // ========== 概率系统 ==========
 // 根据刷新次数调整概率：刷新次数越多，高品质奖品概率越高
+// 品质与图标固定映射（与后台保持一致）
+function qualityIcon(q) {
+  const icons = ['🎁', '🎁', '🎀', '🍀', '💎', '🌟', '💝', '🔮', '👑', '🌈', '🏆'];
+  return icons[Math.min(10, Math.max(1, q))] || '🎁';
+}
+
 function pickPrize(prizes, refreshCount) {
   if (!prizes || prizes.length === 0) return null;
 
@@ -140,7 +146,7 @@ function render() {
 
       const icon = document.createElement('div');
       icon.className = 'cell-icon';
-      icon.textContent = prize.icon;
+      icon.textContent = qualityIcon(prize.quality);
       cell.appendChild(icon);
 
       const name = document.createElement('div');
