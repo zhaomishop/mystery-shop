@@ -386,6 +386,92 @@ body::before {
 .prize-header .col-quality { width: 88px; text-align: center; }
 .prize-header .col-actions { width: 78px; text-align: center; }
 
+/* 口令列表列宽 */
+.prize-header .col-code { flex: 1; }
+.prize-header .col-max { width: 80px; text-align: center; }
+.prize-header .col-remain { width: 50px; text-align: center; }
+.prize-header .col-actions { width: 78px; text-align: center; }
+
+.code-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 4px;
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.code-item:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.code-item:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.code-item input {
+  padding: 5px 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: white;
+  font-size: 0.85em;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.code-item input:focus {
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.code-item .code-text {
+  flex: 1;
+  min-width: 0;
+  font-family: monospace;
+}
+
+.code-item .code-max {
+  width: 80px;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+.code-item .code-max::-webkit-outer-spin-button,
+.code-item .code-max::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.remain-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.remain-badge.empty {
+  background: #6b7280;
+  opacity: 0.7;
+}
+
+.code-actions {
+  display: flex;
+  gap: 3px;
+  width: 78px;
+  justify-content: center;
+}
+
 .prize-item {
   display: flex;
   gap: 6px;
