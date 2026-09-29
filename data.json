@@ -164,6 +164,18 @@
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
+    },
+    {
+      "id": 24,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 25,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ]
 }
