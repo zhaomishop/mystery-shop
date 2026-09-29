@@ -29,9 +29,9 @@
   "prizes": [
     {
       "id": 1,
-      "icon": "🎁",
+      "icon": "👑",
       "name": "测试1",
-      "quality": 1
+      "quality": 8
     },
     {
       "id": 2,
