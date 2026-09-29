@@ -21,7 +21,9 @@ async function fetchData() {
     const json = await res.json();
     if (json.content) {
       const decoded = atob(json.content.replace(/\n/g, ''));
-      currentData = JSON.parse(decoded);
+      const bytes = new Uint8Array(decoded.length);
+      for (let i = 0; i < decoded.length; i++) bytes[i] = decoded.charCodeAt(i);
+      currentData = JSON.parse(new TextDecoder('utf-8').decode(bytes));
       fileSha = json.sha;
       return currentData;
     }
