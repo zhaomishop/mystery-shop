@@ -1,7 +1,7 @@
 {
   "title": "神秘商店",
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
-  "refreshCount": 1,
+  "refreshCount": 0,
   "refreshCodes": [
     {
       "code": "zhaomi2024",
@@ -10,126 +10,81 @@
     },
     {
       "code": "vip888",
-      "uses": 2,
+      "uses": 3,
       "maxUses": 3
     }
   ],
-  "opened": true,
+  "opened": false,
   "currentGrid": [
-    {
-      "id": 10,
-      "name": "至尊奖品",
-      "icon": "🏆",
-      "quality": 10
-    },
-    {
-      "id": 10,
-      "name": "至尊奖品",
-      "icon": "🏆",
-      "quality": 10
-    },
-    {
-      "id": 8,
-      "name": "传说奖品",
-      "icon": "👑",
-      "quality": 8
-    },
-    {
-      "id": 6,
-      "name": "珍贵奖品",
-      "icon": "💝",
-      "quality": 6
-    },
-    {
-      "id": 3,
-      "name": "幸运奖品",
-      "icon": "🍀",
-      "quality": 3
-    },
-    {
-      "id": 9,
-      "name": "神话奖品",
-      "icon": "🌈",
-      "quality": 9
-    },
-    {
-      "id": 7,
-      "name": "史诗奖品",
-      "icon": "🔮",
-      "quality": 7
-    },
-    {
-      "id": 10,
-      "name": "至尊奖品",
-      "icon": "🏆",
-      "quality": 10
-    },
-    {
-      "id": 9,
-      "name": "神话奖品",
-      "icon": "🌈",
-      "quality": 9
-    }
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
   ],
   "prizes": [
     {
       "id": 1,
-      "name": "小奖品",
       "icon": "🎁",
+      "name": "小奖品",
       "quality": 1
     },
     {
       "id": 2,
-      "name": "普通奖品",
       "icon": "🎀",
+      "name": "普通奖品",
       "quality": 2
     },
     {
       "id": 3,
-      "name": "幸运奖品",
       "icon": "🍀",
+      "name": "幸运奖品",
       "quality": 3
     },
     {
       "id": 4,
-      "name": "精美奖品",
       "icon": "💎",
+      "name": "精美奖品",
       "quality": 4
     },
     {
       "id": 5,
-      "name": "稀有奖品",
       "icon": "🌟",
+      "name": "稀有奖品",
       "quality": 5
     },
     {
       "id": 6,
-      "name": "珍贵奖品",
       "icon": "💝",
+      "name": "珍贵奖品",
       "quality": 6
     },
     {
       "id": 7,
-      "name": "史诗奖品",
       "icon": "🔮",
+      "name": "史诗奖品",
       "quality": 7
     },
     {
       "id": 8,
-      "name": "传说奖品",
       "icon": "👑",
+      "name": "传说奖品",
       "quality": 8
     },
     {
       "id": 9,
-      "name": "神话奖品",
       "icon": "🌈",
+      "name": "神话奖品",
       "quality": 9
     },
     {
       "id": 10,
-      "name": "至尊奖品",
       "icon": "🏆",
+      "name": "至尊奖品",
       "quality": 10
     }
   ]
