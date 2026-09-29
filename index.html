@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>神秘商店 - 着迷温馨小店抽奖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="app">
+    <div class="loading" id="loading">加载中</div>
+
+    <div id="content" style="display:none;">
+      <h1 class="shiny-title" id="pageTitle">神秘商店</h1>
+      <p class="shiny-subtitle" id="pageSubtitle">欢迎来到神秘商店</p>
+
+      <div class="refresh-info">
+        已刷新次数：<span id="refreshCount">0</span>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="buttons">
+        <button class="btn btn-refresh" id="btnRefresh">🔄 刷新奖池</button>
+        <button class="btn btn-screenshot" id="btnScreenshot">📸 生成截图</button>
+      </div>
+
+      <div class="admin-link">
+        <a href="admin.html">管理员入口</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 截图预览模态框 -->
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <img id="screenshotImg" alt="截图">
+    <p class="modal-hint">长按图片可保存到手机相册</p>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
