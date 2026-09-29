@@ -13,6 +13,26 @@ const COVER_ICON = '🎁';
 let currentData = null;
 let fileSha = null;
 
+// 数据迁移：旧格式 refreshCode -> 新格式 refreshCodes 数组
+function migrateData(data) {
+  if (!data.refreshCodes) {
+    if (data.refreshCode) {
+      const cnt = data.refreshCount || 0;
+      data.refreshCodes = [{ code: data.refreshCode, uses: Math.max(0, 10 - cnt), maxUses: Math.max(0, 10 - cnt) }];
+    } else {
+      data.refreshCodes = [];
+    }
+    delete data.refreshCode;
+  }
+  // 确保每个口令都有 uses 和 maxUses
+  data.refreshCodes = (data.refreshCodes || []).map(c => ({
+    code: c.code || '',
+    uses: c.uses != null ? c.uses : (c.maxUses || 0),
+    maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
+  }));
+  if (data.refreshCount == null) data.refreshCount = 0;
+}
+
 // ========== GitHub API ==========
 async function fetchData() {
   try {
@@ -26,6 +46,7 @@ async function fetchData() {
       for (let i = 0; i < decoded.length; i++) bytes[i] = decoded.charCodeAt(i);
       currentData = JSON.parse(new TextDecoder('utf-8').decode(bytes));
       fileSha = json.sha;
+      migrateData(currentData);
       return currentData;
     }
   } catch (e) {
@@ -142,15 +163,34 @@ function render() {
 async function handleRefresh() {
   if (!currentData) return;
 
-  const code = prompt('请输入刷新口令：');
-  if (code === null) return;
-
-  if (code !== currentData.refreshCode) {
-    showToast('口令错误！');
+  const codes = currentData.refreshCodes || [];
+  if (codes.length === 0) {
+    showToast('暂无可用口令');
     return;
   }
 
-  // 增加刷新次数
+  const code = prompt('请输入刷新口令：');
+  if (code === null) return;
+  const trimmed = code.trim();
+  if (!trimmed) return;
+
+  // 查找匹配的口令（剩余次数 > 0）
+  const entry = codes.find(c => c.code === trimmed && (c.uses || 0) > 0);
+  if (!entry) {
+    // 检查是否口令存在但次数用尽
+    const exists = codes.find(c => c.code === trimmed);
+    if (exists) {
+      showToast('该口令次数已用尽！');
+    } else {
+      showToast('口令错误！');
+    }
+    return;
+  }
+
+  // 扣减该口令的可用次数
+  entry.uses = (entry.uses || 0) - 1;
+
+  // 增加全局刷新次数（影响概率）
   currentData.refreshCount = (currentData.refreshCount || 0) + 1;
 
   // 生成新的九宫格奖品
@@ -159,7 +199,7 @@ async function handleRefresh() {
 
   const ok = await saveData(currentData);
   if (ok) {
-    showToast(`刷新成功！已刷新 ${currentData.refreshCount} 次`);
+    showToast(`刷新成功！该口令剩余 ${entry.uses} 次`);
     render();
   } else {
     showToast('刷新失败，请重试');
