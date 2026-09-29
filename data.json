@@ -3,62 +3,17 @@
   "subtitle": "月光的金库",
   "refreshCode": "1",
   "refreshCount": 6,
-  "opened": true,
+  "opened": false,
   "currentGrid": [
-    {
-      "id": 5,
-      "name": "稀有奖品",
-      "icon": "🌟",
-      "quality": 5
-    },
-    {
-      "id": 5,
-      "name": "稀有奖品",
-      "icon": "🌟",
-      "quality": 5
-    },
-    {
-      "id": 8,
-      "name": "传说奖品",
-      "icon": "👑",
-      "quality": 8
-    },
-    {
-      "id": 6,
-      "name": "珍贵奖品",
-      "icon": "💝",
-      "quality": 6
-    },
-    {
-      "id": 6,
-      "name": "珍贵奖品",
-      "icon": "💝",
-      "quality": 6
-    },
-    {
-      "id": 10,
-      "name": "至尊奖品",
-      "icon": "🏆",
-      "quality": 10
-    },
-    {
-      "id": 7,
-      "name": "史诗奖品",
-      "icon": "🔮",
-      "quality": 7
-    },
-    {
-      "id": 7,
-      "name": "史诗奖品",
-      "icon": "🔮",
-      "quality": 7
-    },
-    {
-      "id": 8,
-      "name": "传说奖品",
-      "icon": "👑",
-      "quality": 8
-    }
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
   ],
   "prizes": [
     {
