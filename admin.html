@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理员后台 - 神秘商店</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h1>🎛️ 神秘商店管理后台</h1>
+
+    <div class="loading" id="loading">加载中</div>
+
+    <div id="adminContent" style="display:none;">
+      <!-- 标题与副标题 -->
+      <div class="admin-section">
+        <h2>📝 页面设置</h2>
+        <div class="form-group">
+          <label>页面标题</label>
+          <input type="text" id="titleInput" placeholder="神秘商店">
+        </div>
+        <div class="form-group">
+          <label>副标题文本</label>
+          <textarea id="subtitleInput" placeholder="欢迎来到神秘商店"></textarea>
+        </div>
+      </div>
+
+      <!-- 奖池管理 -->
+      <div class="admin-section">
+        <h2>🎁 奖池管理</h2>
+        <div id="prizeList"></div>
+        <button class="btn-small btn-add" id="btnAddPrize">+ 添加奖品</button>
+      </div>
+
+      <!-- 刷新口令与次数 -->
+      <div class="admin-section">
+        <h2>🔐 刷新口令与次数</h2>
+        <div class="form-group">
+          <label>刷新口令</label>
+          <input type="text" id="codeInput" placeholder="设置刷新口令">
+        </div>
+        <div class="form-group">
+          <label>当前刷新次数</label>
+          <div class="count-display" id="countDisplay">0</div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn-small btn-count" id="btnAddCount">+1 次数</button>
+          <button class="btn-small btn-count" id="btnAddCount5">+5 次数</button>
+          <button class="btn-small btn-count" id="btnResetCount">重置为0</button>
+        </div>
+        <p style="font-size:0.8em;color:rgba(255,255,255,0.6);">
+          刷新次数越多，刷出高级奖品的概率越高。增加次数不会立即刷新奖池。
+        </p>
+      </div>
+
+      <!-- 重置奖池 -->
+      <div class="admin-section">
+        <h2>🔄 重置奖池</h2>
+        <p style="font-size:0.85em;color:rgba(255,255,255,0.7);margin-bottom:10px;">
+          重置后九宫格将恢复为未开启状态，所有格子被覆盖。
+        </p>
+        <button class="btn-reset" id="btnResetPool">重置奖池到未开启状态</button>
+      </div>
+
+      <!-- 保存按钮 -->
+      <button class="btn-save" id="btnSave">💾 保存所有设置</button>
+    </div>
+
+    <a href="index.html" class="back-link">← 返回抽奖页面</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
