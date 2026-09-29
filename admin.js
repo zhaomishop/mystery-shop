@@ -150,6 +150,11 @@ function renderCodeList() {
       renderCodeList();
     });
   });
+
+  // 口令输入失焦自动保存
+  list.querySelectorAll('.code-text, .code-max').forEach(input => {
+    input.addEventListener('blur', autoSave);
+  });
 }
 
 function qualityColor(q) {
@@ -157,38 +162,31 @@ function qualityColor(q) {
   return colors[Math.min(10, Math.max(0, q))] || '#888';
 }
 
+// 品质与图标固定映射
+function qualityIcon(q) {
+  const icons = ['🎁', '🎁', '🎀', '🍀', '💎', '🌟', '💝', '🔮', '👑', '🌈', '🏆'];
+  return icons[Math.min(10, Math.max(1, q))] || '🎁';
+}
+
 function renderPrizeList() {
   const list = document.getElementById('prizeList');
   list.innerHTML = '';
 
-  // 表头
-  const header = document.createElement('div');
-  header.className = 'prize-header';
-  header.innerHTML = `
-    <span class="col-icon">图标</span>
-    <span class="col-name">奖品名称</span>
-    <span class="col-quality">品质</span>
-    <span class="col-actions">操作</span>
-  `;
-  list.appendChild(header);
-
   const prizes = currentData.prizes || [];
   prizes.forEach((prize, idx) => {
-    const q = prize.quality || 1;
+    const q = Math.min(10, Math.max(1, prize.quality || 1));
     const item = document.createElement('div');
     item.className = 'prize-item';
     item.innerHTML = `
-      <input type="text" class="prize-icon" value="${prize.icon || ''}" placeholder="🎁" maxlength="4">
-      <input type="text" class="prize-name" value="${prize.name || ''}" placeholder="奖品名称">
+      <div class="prize-icon-box" style="background:${qualityColor(q)}33;">
+        <span class="prize-icon-fixed">${qualityIcon(q)}</span>
+      </div>
+      <input type="text" class="prize-name" value="${(prize.name || '').replace(/"/g, '&quot;')}" placeholder="奖品名称">
       <div class="prize-quality-wrap">
         <input type="number" class="prize-quality" value="${q}" min="1" max="10" placeholder="1">
         <span class="quality-badge" style="background:${qualityColor(q)}">Q${q}</span>
       </div>
-      <div class="prize-actions">
-        <button class="btn-small btn-move" data-idx="${idx}" data-dir="up" title="上移">▲</button>
-        <button class="btn-small btn-move" data-idx="${idx}" data-dir="down" title="下移">▼</button>
-        <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
-      </div>
+      <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
     `;
     list.appendChild(item);
   });
@@ -199,29 +197,29 @@ function renderPrizeList() {
       const idx = parseInt(e.target.dataset.idx);
       currentData.prizes.splice(idx, 1);
       renderPrizeList();
+      autoSave();
     });
   });
 
-  // 上移/下移
-  list.querySelectorAll('.btn-move').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const idx = parseInt(e.target.dataset.idx);
-      const dir = e.target.dataset.dir;
-      const target = dir === 'up' ? idx - 1 : idx + 1;
-      if (target < 0 || target >= currentData.prizes.length) return;
-      [currentData.prizes[idx], currentData.prizes[target]] = [currentData.prizes[target], currentData.prizes[idx]];
-      renderPrizeList();
-    });
-  });
-
-  // 品质输入变化时更新徽章颜色
+  // 品质变化：实时更新图标和徽章
   list.querySelectorAll('.prize-quality').forEach(input => {
     input.addEventListener('input', (e) => {
-      const badge = e.target.parentElement.querySelector('.quality-badge');
       const val = Math.min(10, Math.max(1, parseInt(e.target.value) || 1));
+      const item = e.target.closest('.prize-item');
+      const badge = item.querySelector('.quality-badge');
+      const iconBox = item.querySelector('.prize-icon-box');
+      const iconFixed = item.querySelector('.prize-icon-fixed');
       badge.style.background = qualityColor(val);
       badge.textContent = 'Q' + val;
+      iconBox.style.background = qualityColor(val) + '33';
+      iconFixed.textContent = qualityIcon(val);
     });
+    input.addEventListener('blur', autoSave);
+  });
+
+  // 名称输入：失焦自动保存
+  list.querySelectorAll('.prize-name').forEach(input => {
+    input.addEventListener('blur', autoSave);
   });
 }
 
@@ -230,14 +228,17 @@ function collectFormData() {
   currentData.title = document.getElementById('titleInput').value.trim() || '神秘商店';
   currentData.subtitle = document.getElementById('subtitleInput').value.trim();
 
-  // 收集奖品列表
+  // 收集奖品列表（图标由品质自动决定）
   const items = document.querySelectorAll('.prize-item');
-  currentData.prizes = Array.from(items).map((item, idx) => ({
-    id: idx + 1,
-    icon: item.querySelector('.prize-icon').value.trim() || '🎁',
-    name: item.querySelector('.prize-name').value.trim() || `奖品${idx + 1}`,
-    quality: Math.min(10, Math.max(1, parseInt(item.querySelector('.prize-quality').value) || 1))
-  }));
+  currentData.prizes = Array.from(items).map((item, idx) => {
+    const q = Math.min(10, Math.max(1, parseInt(item.querySelector('.prize-quality').value) || 1));
+    return {
+      id: idx + 1,
+      icon: qualityIcon(q),
+      name: item.querySelector('.prize-name').value.trim() || `奖品${idx + 1}`,
+      quality: q
+    };
+  });
 
   // 收集口令列表（保存时剩余次数重置为设定的可用次数）
   const codeItems = document.querySelectorAll('.code-item');
@@ -250,6 +251,17 @@ function collectFormData() {
   return currentData;
 }
 
+// ========== 自动保存（防抖） ==========
+let autoSaveTimer = null;
+function autoSave() {
+  if (autoSaveTimer) clearTimeout(autoSaveTimer);
+  autoSaveTimer = setTimeout(async () => {
+    collectFormData();
+    const ok = await saveData(currentData);
+    if (ok) showToast('已自动保存');
+  }, 400);
+}
+
 // ========== 事件 ==========
 document.getElementById('btnAddPrize').addEventListener('click', () => {
   currentData.prizes.push({
@@ -259,6 +271,12 @@ document.getElementById('btnAddPrize').addEventListener('click', () => {
     quality: 1
   });
   renderPrizeList();
+  autoSave();
+});
+
+// 标题/副标题失焦自动保存
+['titleInput', 'subtitleInput'].forEach(id => {
+  document.getElementById(id).addEventListener('blur', autoSave);
 });
 
 // 添加口令
@@ -266,22 +284,26 @@ document.getElementById('btnAddCode').addEventListener('click', () => {
   if (!currentData.refreshCodes) currentData.refreshCodes = [];
   currentData.refreshCodes.push({ code: '', uses: 1, maxUses: 1 });
   renderCodeList();
+  autoSave();
 });
 
 document.getElementById('btnAddCount').addEventListener('click', () => {
   currentData.refreshCount = (currentData.refreshCount || 0) + 1;
   document.getElementById('countDisplay').textContent = currentData.refreshCount;
+  autoSave();
 });
 
 document.getElementById('btnAddCount5').addEventListener('click', () => {
   currentData.refreshCount = (currentData.refreshCount || 0) + 5;
   document.getElementById('countDisplay').textContent = currentData.refreshCount;
+  autoSave();
 });
 
 document.getElementById('btnResetCount').addEventListener('click', () => {
   if (confirm('确定要将累计刷新次数清零吗？')) {
     currentData.refreshCount = 0;
     document.getElementById('countDisplay').textContent = 0;
+    autoSave();
   }
 });
 
