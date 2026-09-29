@@ -1,20 +1,125 @@
 {
-  "title": "神秘商店",
-  "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
+  "title": "ç¥ç§ååº",
+  "subtitle": "æ¬¢è¿æ¥å°ç¥ç§ååºï¼å¿«æ¥æ½åä½ çå¹¸è¿å¥åå§ï¼",
   "refreshCode": "zhaomi2024",
-  "refreshCount": 0,
-  "opened": false,
-  "currentGrid": [null, null, null, null, null, null, null, null, null],
+  "refreshCount": 1,
+  "opened": true,
+  "currentGrid": [
+    {
+      "id": 4,
+      "name": "ç²¾ç¾å¥å",
+      "icon": "ð",
+      "quality": 4
+    },
+    {
+      "id": 7,
+      "name": "å²è¯å¥å",
+      "icon": "ð®",
+      "quality": 7
+    },
+    {
+      "id": 9,
+      "name": "ç¥è¯å¥å",
+      "icon": "ð",
+      "quality": 9
+    },
+    {
+      "id": 1,
+      "name": "å°å¥å",
+      "icon": "ð",
+      "quality": 1
+    },
+    {
+      "id": 10,
+      "name": "è³å°å¥å",
+      "icon": "ð",
+      "quality": 10
+    },
+    {
+      "id": 10,
+      "name": "è³å°å¥å",
+      "icon": "ð",
+      "quality": 10
+    },
+    {
+      "id": 7,
+      "name": "å²è¯å¥å",
+      "icon": "ð®",
+      "quality": 7
+    },
+    {
+      "id": 5,
+      "name": "ç¨æå¥å",
+      "icon": "ð",
+      "quality": 5
+    },
+    {
+      "id": 10,
+      "name": "è³å°å¥å",
+      "icon": "ð",
+      "quality": 10
+    }
+  ],
   "prizes": [
-    {"id": 1, "name": "小奖品", "icon": "🎁", "quality": 1},
-    {"id": 2, "name": "普通奖品", "icon": "🎀", "quality": 2},
-    {"id": 3, "name": "幸运奖品", "icon": "🍀", "quality": 3},
-    {"id": 4, "name": "精美奖品", "icon": "💎", "quality": 4},
-    {"id": 5, "name": "稀有奖品", "icon": "🌟", "quality": 5},
-    {"id": 6, "name": "珍贵奖品", "icon": "💝", "quality": 6},
-    {"id": 7, "name": "史诗奖品", "icon": "🔮", "quality": 7},
-    {"id": 8, "name": "传说奖品", "icon": "👑", "quality": 8},
-    {"id": 9, "name": "神话奖品", "icon": "🌈", "quality": 9},
-    {"id": 10, "name": "至尊奖品", "icon": "🏆", "quality": 10}
+    {
+      "id": 1,
+      "name": "å°å¥å",
+      "icon": "ð",
+      "quality": 1
+    },
+    {
+      "id": 2,
+      "name": "æ®éå¥å",
+      "icon": "ð",
+      "quality": 2
+    },
+    {
+      "id": 3,
+      "name": "å¹¸è¿å¥å",
+      "icon": "ð",
+      "quality": 3
+    },
+    {
+      "id": 4,
+      "name": "ç²¾ç¾å¥å",
+      "icon": "ð",
+      "quality": 4
+    },
+    {
+      "id": 5,
+      "name": "ç¨æå¥å",
+      "icon": "ð",
+      "quality": 5
+    },
+    {
+      "id": 6,
+      "name": "çè´µå¥å",
+      "icon": "ð",
+      "quality": 6
+    },
+    {
+      "id": 7,
+      "name": "å²è¯å¥å",
+      "icon": "ð®",
+      "quality": 7
+    },
+    {
+      "id": 8,
+      "name": "ä¼ è¯´å¥å",
+      "icon": "ð",
+      "quality": 8
+    },
+    {
+      "id": 9,
+      "name": "ç¥è¯å¥å",
+      "icon": "ð",
+      "quality": 9
+    },
+    {
+      "id": 10,
+      "name": "è³å°å¥å",
+      "icon": "ð",
+      "quality": 10
+    }
   ]
 }
