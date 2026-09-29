@@ -1,11 +1,11 @@
 {
   "title": "神秘商店",
   "subtitle": "月光的金库",
-  "refreshCount": 3,
+  "refreshCount": 0,
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 7,
+      "uses": 10,
       "maxUses": 10
     },
     {
