@@ -5,85 +5,18 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 5,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 39,
-          "icon": "🔮",
-          "name": "新奖品",
-          "quality": 7
-        },
-        {
-          "id": 45,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 64,
-          "icon": "🏆",
-          "name": "新奖品",
-          "quality": 10
-        },
-        {
-          "id": 39,
-          "icon": "🔮",
-          "name": "新奖品",
-          "quality": 7
-        },
-        {
-          "id": 36,
-          "icon": "💝",
-          "name": "新奖品",
-          "quality": 6
-        },
-        {
-          "id": 51,
-          "icon": "🏆",
-          "name": "新奖品",
-          "quality": 10
-        },
-        {
-          "id": 56,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "史诗奖品",
-          "quality": 7
-        },
-        {
-          "id": 70,
-          "icon": "🌈",
-          "name": "新奖品",
-          "quality": 9
-        }
-      ],
-      "refreshCount": 6,
-      "refreshTime": 1790753327217,
-      "opened": true
+      "uses": 10,
+      "maxUses": 10
     },
     {
       "code": "555",
       "uses": 9,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 9
     },
     {
       "code": "666",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     }
   ],
   "prizes": [
@@ -543,5 +476,6 @@
       "name": "新奖品",
       "quality": 7
     }
-  ]
+  ],
+  "refreshCount": 0
 }
