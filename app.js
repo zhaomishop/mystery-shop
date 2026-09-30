@@ -31,6 +31,8 @@ function migrateData(data) {
     maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
   }));
   if (data.refreshCount == null) data.refreshCount = 0;
+  // 概率斜率默认值：控制低/高品质概率差距，值越大低品质概率越高
+  if (data.probabilitySlope == null) data.probabilitySlope = 2.5;
 }
 
 // ========== GitHub API ==========
@@ -103,11 +105,10 @@ function pickPrize(prizes, refreshCount) {
   const K = 5; // 过渡速度：值越大，低品质占优的阶段越长
   const t = refreshCount / (refreshCount + K);
 
-  // 权重 = ((1-t)*(11-品质) + t*品质)^幂
-  // t=0 时权重=(11-品质)^p（低品质权重大），t=1 时权重=品质^p（高品质权重大）
-  // 幂函数使难度从 Q1 到 Q10 平滑递增，同时高等级保持稀有
-  const p = 2.5; // 曲线陡峭程度：值越大，高等级越稀有
-  const weights = prizes.map(pr => Math.pow((1 - t) * (11 - pr.quality) + t * pr.quality, p));
+  // 斜率 slope：控制概率曲线陡峭程度
+  // slope 越大 → 低品质权重越高、高品质越稀有；slope 越接近 0 → 各品质概率越接近
+  const slope = (currentData && currentData.probabilitySlope != null) ? currentData.probabilitySlope : 2.5;
+  const weights = prizes.map(pr => Math.pow((1 - t) * (11 - pr.quality) + t * pr.quality, slope));
   const totalWeight = weights.reduce((a, b) => a + b, 0);
 
   let rand = Math.random() * totalWeight;
