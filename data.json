@@ -400,6 +400,24 @@
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
+    },
+    {
+      "id": 64,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 65,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 66,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ]
 }
