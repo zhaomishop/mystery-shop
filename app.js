@@ -130,7 +130,7 @@ function qualityIcon(q) {
 // 概率采用正态分布：
 //   中心品质 center = 用户输入的 1~10 整数
 //   该品质概率最高，两侧品质按正态分布（高斯）递减
-//   每刷新一次，中心品质在上一次基础上 +1（封顶 10）
+//   每刷新一次，中心品质在上一次基础上 +0.5（封顶 10）
 function pickPrize(prizes, refreshCount) {
   if (!prizes || prizes.length === 0) return null;
 
@@ -139,8 +139,8 @@ function pickPrize(prizes, refreshCount) {
     ? Math.max(1, Math.min(10, Math.round(currentData.probabilitySlope)))
     : 3;
 
-  // 每刷新一次，中心品质 +1，封顶 10
-  const mu = Math.min(10, baseCenter + refreshCount);
+  // 每刷新一次，中心品质 +0.5，封顶 10
+  const mu = Math.min(10, baseCenter + refreshCount * 0.5);
 
   // 正态分布权重：sigma 控制扩散程度
   const sigma = 1.6;
