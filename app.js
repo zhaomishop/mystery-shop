@@ -85,7 +85,10 @@ async function saveData(data) {
 }
 
 // ========== 概率系统 ==========
-// 根据刷新次数调整概率：刷新次数越多，高品质奖品概率越高
+// 概率随刷新次数动态变化：
+//   首次刷新（refreshCount=0）：低品质奖品概率极高，高品质奖品概率极低
+//   随着刷新次数增加：高品质奖品概率逐渐升高，低品质奖品概率逐渐降低
+//   刷新次数足够多时：高品质奖品占绝对优势
 // 品质与图标固定映射（与后台保持一致）
 function qualityIcon(q) {
   const icons = ['🎁', '🎁', '🎀', '🍀', '💎', '🌟', '💝', '🔮', '👑', '🌈', '🏆'];
@@ -95,9 +98,16 @@ function qualityIcon(q) {
 function pickPrize(prizes, refreshCount) {
   if (!prizes || prizes.length === 0) return null;
 
-  // 权重公式：quality ^ (1 + refreshCount * 0.15)
-  // refreshCount 越大，高品质奖品的权重增长越快
-  const weights = prizes.map(p => Math.pow(p.quality, 1 + refreshCount * 0.15));
+  // 过渡因子 t：refreshCount=0 时为 0（偏向低品质），
+  // 随刷新次数增加趋近 1（偏向高品质），t=0.5 时各品质等概率。
+  const K = 5; // 过渡速度：值越大，低品质占优的阶段越长
+  const t = refreshCount / (refreshCount + K);
+
+  // 权重 = ((1-t)*(11-品质) + t*品质)^幂
+  // t=0 时权重=(11-品质)^p（低品质权重大），t=1 时权重=品质^p（高品质权重大）
+  // 幂函数使难度从 Q1 到 Q10 平滑递增，同时高等级保持稀有
+  const p = 2.5; // 曲线陡峭程度：值越大，高等级越稀有
+  const weights = prizes.map(pr => Math.pow((1 - t) * (11 - pr.quality) + t * pr.quality, p));
   const totalWeight = weights.reduce((a, b) => a + b, 0);
 
   let rand = Math.random() * totalWeight;
@@ -165,6 +175,30 @@ function render() {
   }
 }
 
+// ========== 口令输入弹窗 ==========
+let codeModalResolver = null;
+
+function showCodeModal() {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('codeModal');
+    const input = document.getElementById('codeModalInput');
+    codeModalResolver = resolve;
+    input.value = '';
+    modal.classList.add('show');
+    setTimeout(() => input.focus(), 100);
+  });
+}
+
+function closeCodeModal(value) {
+  const modal = document.getElementById('codeModal');
+  modal.classList.remove('show');
+  if (codeModalResolver) {
+    const r = codeModalResolver;
+    codeModalResolver = null;
+    r(value);
+  }
+}
+
 // ========== 刷新逻辑 ==========
 async function handleRefresh() {
   if (!currentData) return;
@@ -175,7 +209,7 @@ async function handleRefresh() {
     return;
   }
 
-  const code = prompt('请输入刷新口令：');
+  const code = await showCodeModal();
   if (code === null) return;
   const trimmed = code.trim();
   if (!trimmed) return;
@@ -260,6 +294,24 @@ document.getElementById('btnRefresh').addEventListener('click', handleRefresh);
 document.getElementById('btnScreenshot').addEventListener('click', handleScreenshot);
 document.getElementById('modalClose').addEventListener('click', () => {
   document.getElementById('modal').classList.remove('show');
+});
+
+// 口令弹窗事件
+document.getElementById('codeModalConfirm').addEventListener('click', () => {
+  closeCodeModal(document.getElementById('codeModalInput').value);
+});
+document.getElementById('codeModalCancel').addEventListener('click', () => {
+  closeCodeModal(null);
+});
+document.getElementById('codeModalInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    closeCodeModal(e.target.value);
+  } else if (e.key === 'Escape') {
+    closeCodeModal(null);
+  }
+});
+document.getElementById('codeModal').addEventListener('click', (e) => {
+  if (e.target.id === 'codeModal') closeCodeModal(null);
 });
 
 init();
