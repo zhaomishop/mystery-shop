@@ -18,9 +18,9 @@
   "prizes": [
     {
       "id": 1,
-      "icon": "💎",
-      "name": "精美奖品",
-      "quality": 4
+      "icon": "🍀",
+      "name": "测试奖品",
+      "quality": 3
     },
     {
       "id": 2,
