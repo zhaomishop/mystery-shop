@@ -1,26 +1,71 @@
 {
   "title": "神秘商店",
   "subtitle": "月光的金库",
-  "refreshCount": 0,
+  "refreshCount": 1,
   "probabilitySlope": 10,
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 10,
+      "uses": 9,
       "maxUses": 10
     }
   ],
-  "opened": false,
+  "opened": true,
   "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    {
+      "id": 17,
+      "icon": "🎀",
+      "name": "新奖品",
+      "quality": 2
+    },
+    {
+      "id": 13,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 11,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 15,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 1,
+      "icon": "🎁",
+      "name": "小奖品",
+      "quality": 1
+    },
+    {
+      "id": 53,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 12,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 15,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 53,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    }
   ],
   "prizes": [
     {
