@@ -6,22 +6,93 @@
     {
       "code": "测试123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "零食555",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "小迁456",
-      "uses": 10,
-      "maxUses": 10
+      "uses": 9,
+      "maxUses": 10,
+      "grid": [
+        {
+          "id": 22,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 26,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 21,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 20,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 21,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 4,
+          "icon": "💎",
+          "name": "公演双倍卡*5（3000灵石）",
+          "quality": 4
+        },
+        {
+          "id": 19,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 14,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 55,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1790776829142,
+      "opened": true
     },
     {
       "code": "汜汜123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -475,6 +546,5 @@
       "name": "灵石1000（免费）",
       "quality": 7
     }
-  ],
-  "refreshCount": 0
+  ]
 }
