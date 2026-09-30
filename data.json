@@ -6,102 +6,27 @@
     {
       "code": "新娘456",
       "uses": 0,
-      "maxUses": 9,
-      "grid": [
-        {
-          "id": 24,
-          "icon": "🍀",
-          "name": "粉钻*10（10000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 34,
-          "icon": "💝",
-          "name": "六字前缀卡7天（9000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 6,
-          "icon": "💝",
-          "name": "二字前缀卡7天（3500灵石）",
-          "quality": 6
-        },
-        {
-          "id": 28,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2500灵石）",
-          "quality": 4
-        },
-        {
-          "id": 21,
-          "icon": "🍀",
-          "name": "粉钻*10（10000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 70,
-          "icon": "🔮",
-          "name": "灵石1000（免费）",
-          "quality": 7
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "二字前缀 30天（13888灵石）",
-          "quality": 7
-        },
-        {
-          "id": 28,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2500灵石）",
-          "quality": 4
-        },
-        {
-          "id": 68,
-          "icon": "👑",
-          "name": "呆毛*10（2000灵石）",
-          "quality": 8
-        }
-      ],
-      "refreshCount": 9,
-      "refreshTime": 1790778510093,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "沐崽789",
       "uses": 9,
-      "maxUses": 9,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 9
     },
     {
       "code": "安婷114",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "汜汜777",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     }
   ],
   "prizes": [
@@ -432,7 +357,7 @@
     {
       "id": 55,
       "icon": "🏆",
-      "name": "高级自由马30天（88888灵石）高级自由马30天（77777灵石）",
+      "name": "高级自由马30天（88888灵石）",
       "quality": 10
     },
     {
@@ -573,5 +498,6 @@
       "name": "粉钻*5（5000灵石）",
       "quality": 2
     }
-  ]
+  ],
+  "refreshCount": 0
 }
