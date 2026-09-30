@@ -308,26 +308,125 @@ async function handleRefresh() {
   }
 }
 
-// ========== 截图功能 ==========
+// ========== 截图功能（海报模式）==========
+function getCodeDisplayName(code) {
+  if (!code) return '神秘人';
+  // 口令如"某某123"则显示"某某"
+  return code.replace(/\d+$/, '').trim() || code;
+}
+
+function getQualityColor(q) {
+  if (q <= 2) return { bg: 'rgba(192,192,192,0.15)', border: 'rgba(192,192,192,0.6)', text: '#c0c0c0' };
+  if (q <= 4) return { bg: 'rgba(0,255,0,0.12)', border: 'rgba(0,255,0,0.6)', text: '#00e676' };
+  if (q <= 6) return { bg: 'rgba(0,100,255,0.12)', border: 'rgba(0,100,255,0.6)', text: '#448aff' };
+  if (q <= 8) return { bg: 'rgba(160,32,240,0.15)', border: 'rgba(160,32,240,0.7)', text: '#bb33ff' };
+  return { bg: 'rgba(255,215,0,0.15)', border: 'rgba(255,215,0,0.8)', text: '#ffd700' };
+}
+
 async function handleScreenshot() {
-  const content = document.getElementById('content');
   const modal = document.getElementById('modal');
   const img = document.getElementById('screenshotImg');
 
-  showToast('正在生成截图...');
+  showToast('正在生成海报...');
+
+  const entry = (currentData.refreshCodes || []).find(c => c.code === currentCode);
+  const opened = entry ? entry.opened : false;
+  const currentGrid = (entry && entry.grid) ? entry.grid : [];
+  const displayName = getCodeDisplayName(currentCode);
+
+  // 构建海报 DOM
+  const poster = document.createElement('div');
+  poster.style.cssText = `
+    position:fixed; left:-9999px; top:0;
+    width:420px; padding:36px 28px 28px;
+    background:linear-gradient(160deg,#0d0d1a 0%,#1a1a2e 30%,#16213e 60%,#0f3460 100%);
+    border-radius:20px; box-sizing:border-box;
+    font-family:'PingFang SC','Microsoft YaHei',sans-serif;
+    color:#fff;
+  `;
+
+  // 顶部标题
+  const titleDiv = document.createElement('div');
+  titleDiv.innerHTML = `
+    <div style="text-align:center;font-size:30px;font-weight:700;letter-spacing:6px;
+      background:linear-gradient(180deg,#fff4c2,#ffd700,#f5a623,#c41e3a,#8b0000);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      margin-bottom:6px;">月光宝盒</div>
+    <div style="text-align:center;font-size:13px;color:rgba(255,215,0,0.6);letter-spacing:3px;">MYSTERY SHOP · 着迷温馨小店</div>
+  `;
+  poster.appendChild(titleDiv);
+
+  // 分割线
+  poster.appendChild(Object.assign(document.createElement('div'), {
+    style: 'height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.4),transparent);margin:18px 0;'
+  }));
+
+  // 开启者
+  const openerDiv = document.createElement('div');
+  openerDiv.style.cssText = 'text-align:center;margin-bottom:22px;';
+  openerDiv.innerHTML = `
+    <div style="font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:6px;letter-spacing:2px;">月光宝盒开启者</div>
+    <div style="font-size:26px;font-weight:700;color:#ffd700;text-shadow:0 0 12px rgba(255,215,0,0.5);letter-spacing:3px;">${displayName}</div>
+  `;
+  poster.appendChild(openerDiv);
+
+  // 九宫格奖池
+  const gridDiv = document.createElement('div');
+  gridDiv.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;';
+
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement('div');
+    if (opened && currentGrid[i]) {
+      const prize = currentGrid[i];
+      const qc = getQualityColor(prize.quality);
+      cell.style.cssText = `
+        background:${qc.bg};border:1.5px solid ${qc.border};border-radius:12px;
+        padding:14px 8px;text-align:center;
+        box-shadow:0 0 12px ${qc.border};
+      `;
+      cell.innerHTML = `
+        <div style="font-size:24px;margin-bottom:4px;">${qualityIcon(prize.quality)}</div>
+        <div style="font-size:11px;color:${qc.text};font-weight:700;margin-bottom:2px;">Q${prize.quality}</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.9);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${prize.name}</div>
+      `;
+    } else {
+      cell.style.cssText = `
+        background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);
+        border-radius:12px;padding:14px 8px;text-align:center;
+      `;
+      cell.innerHTML = `<div style="font-size:24px;opacity:0.3;">${COVER_ICON}</div>`;
+    }
+    gridDiv.appendChild(cell);
+  }
+  poster.appendChild(gridDiv);
+
+  // 底部信息
+  const footer = document.createElement('div');
+  footer.style.cssText = 'text-align:center;';
+  const refreshCount = (entry && entry.refreshCount) ? entry.refreshCount : 0;
+  footer.innerHTML = `
+    <div style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:4px;">已刷新 ${refreshCount} 次</div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:1px;">长按图片可保存到手机相册</div>
+  `;
+  poster.appendChild(footer);
+
+  document.body.appendChild(poster);
 
   try {
-    const canvas = await html2canvas(content, {
-      backgroundColor: '#1a1a2e',
+    const canvas = await html2canvas(poster, {
+      backgroundColor: null,
       scale: 2,
-      useCORS: true
+      useCORS: true,
+      logging: false
     });
     const dataUrl = canvas.toDataURL('image/png');
     img.src = dataUrl;
     modal.classList.add('show');
   } catch (e) {
     console.error('Screenshot failed:', e);
-    showToast('截图生成失败');
+    showToast('海报生成失败');
+  } finally {
+    document.body.removeChild(poster);
   }
 }
 
