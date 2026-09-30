@@ -96,7 +96,7 @@
     },
     {
       "code": "汜汜123",
-      "uses": 9,
+      "uses": 8,
       "maxUses": 10,
       "grid": [
         {
@@ -106,19 +106,7 @@
           "quality": 2
         },
         {
-          "id": 16,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 53,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 21,
+          "id": 54,
           "icon": "🎀",
           "name": "新奖品",
           "quality": 2
@@ -130,10 +118,16 @@
           "quality": 3
         },
         {
-          "id": 30,
-          "icon": "💎",
+          "id": 55,
+          "icon": "🍀",
           "name": "新奖品",
-          "quality": 4
+          "quality": 3
+        },
+        {
+          "id": 17,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
         },
         {
           "id": 25,
@@ -142,20 +136,26 @@
           "quality": 3
         },
         {
-          "id": 18,
+          "id": 54,
           "icon": "🎀",
           "name": "新奖品",
           "quality": 2
         },
         {
-          "id": 19,
+          "id": 26,
+          "icon": "🍀",
+          "name": "新奖品",
+          "quality": 3
+        },
+        {
+          "id": 20,
           "icon": "🎀",
           "name": "新奖品",
           "quality": 2
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1790774315685,
+      "refreshCount": 2,
+      "refreshTime": 1790774317621,
       "opened": true
     }
   ],
