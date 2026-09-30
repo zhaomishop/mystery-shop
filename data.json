@@ -23,50 +23,26 @@
     },
     {
       "code": "月光666",
-      "uses": 8,
+      "uses": 7,
       "maxUses": 10,
       "grid": [
         {
-          "id": 1,
-          "icon": "🎁",
-          "name": "小奖品",
-          "quality": 1
-        },
-        {
-          "id": 55,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        },
-        {
-          "id": 1,
-          "icon": "🎁",
-          "name": "小奖品",
-          "quality": 1
-        },
-        {
-          "id": 21,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
-        {
-          "id": 19,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
-        {
-          "id": 53,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 31,
+          "id": 30,
           "icon": "💎",
           "name": "新奖品",
           "quality": 4
+        },
+        {
+          "id": 13,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 5,
+          "icon": "🌟",
+          "name": "稀有奖品",
+          "quality": 5
         },
         {
           "id": 29,
@@ -75,14 +51,38 @@
           "quality": 4
         },
         {
-          "id": 54,
+          "id": 28,
+          "icon": "💎",
+          "name": "新奖品",
+          "quality": 4
+        },
+        {
+          "id": 18,
           "icon": "🎀",
           "name": "新奖品",
           "quality": 2
+        },
+        {
+          "id": 3,
+          "icon": "🍀",
+          "name": "幸运奖品",
+          "quality": 3
+        },
+        {
+          "id": 19,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 36,
+          "icon": "💝",
+          "name": "新奖品",
+          "quality": 6
         }
       ],
-      "refreshCount": 2,
-      "refreshTime": 1790754426931,
+      "refreshCount": 3,
+      "refreshTime": 1790754429255,
       "opened": true
     }
   ],
