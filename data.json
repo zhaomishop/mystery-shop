@@ -5,28 +5,103 @@
   "refreshCodes": [
     {
       "code": "新娘456",
-      "uses": 10,
-      "maxUses": 10
+      "uses": 9,
+      "maxUses": 10,
+      "grid": [
+        {
+          "id": 2,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 11,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 17,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 14,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 1,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 17,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 25,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 13,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 23,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1790777359250,
+      "opened": true
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "沐崽789",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "安婷114",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "汜汜777",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -480,18 +555,5 @@
       "name": "灵石1000（免费）",
       "quality": 7
     }
-  ],
-  "refreshCount": 0,
-  "opened": false,
-  "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
   ]
 }
