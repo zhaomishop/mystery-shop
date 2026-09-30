@@ -16,8 +16,8 @@
     },
     {
       "code": "666",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "opened": true,
