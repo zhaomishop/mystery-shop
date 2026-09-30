@@ -5,50 +5,32 @@
   "refreshCodes": [
     {
       "code": "测试123",
-      "uses": 5,
+      "uses": 4,
       "maxUses": 10,
       "grid": [
         {
-          "id": 36,
-          "icon": "💝",
-          "name": "六字前缀卡7天（9000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 35,
-          "icon": "💝",
-          "name": "四字前缀卡7天（6000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 45,
+          "id": 72,
           "icon": "👑",
-          "name": "中级自由马7天（20000灵石）",
+          "name": "呆毛*10（2000灵石）",
           "quality": 8
         },
         {
-          "id": 34,
-          "icon": "💝",
-          "name": "四字前缀卡7天（6000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 75,
+          "id": 39,
           "icon": "🔮",
-          "name": "灵石1000（免费）",
+          "name": "六字前缀卡30天（36789灵石）",
           "quality": 7
         },
         {
-          "id": 36,
-          "icon": "💝",
-          "name": "六字前缀卡7天（9000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 31,
+          "id": 32,
           "icon": "🌟",
           "name": "月光宝盒*2（600灵石）",
           "quality": 5
+        },
+        {
+          "id": 7,
+          "icon": "🔮",
+          "name": "二字前缀 30天（13888灵石）",
+          "quality": 7
         },
         {
           "id": 70,
@@ -57,14 +39,32 @@
           "quality": 9
         },
         {
-          "id": 32,
+          "id": 65,
+          "icon": "🌈",
+          "name": "bot冠名7日卡（48000灵石）",
+          "quality": 9
+        },
+        {
+          "id": 38,
+          "icon": "🔮",
+          "name": "六字前缀卡30天（36789灵石）",
+          "quality": 7
+        },
+        {
+          "id": 5,
           "icon": "🌟",
           "name": "月光宝盒*2（600灵石）",
           "quality": 5
+        },
+        {
+          "id": 68,
+          "icon": "🌈",
+          "name": "bot冠名7日卡（48000灵石）",
+          "quality": 9
         }
       ],
-      "refreshCount": 5,
-      "refreshTime": 1790776901530,
+      "refreshCount": 6,
+      "refreshTime": 1790776914194,
       "opened": true
     },
     {
