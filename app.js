@@ -31,8 +31,8 @@ function migrateData(data) {
     maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
   }));
   if (data.refreshCount == null) data.refreshCount = 0;
-  // 概率斜率默认值：0→只出品质1~2，10→只出品质9~10
-  if (data.probabilitySlope == null) data.probabilitySlope = 2.5;
+  // 中心品质默认值：1~10，正态分布中心
+  if (data.probabilitySlope == null) data.probabilitySlope = 3;
 }
 
 // ========== GitHub API ==========
@@ -97,43 +97,31 @@ function qualityIcon(q) {
   return icons[Math.min(10, Math.max(1, q))] || '🎁';
 }
 
-// 概率随斜率与刷新次数动态变化：
-//   slope=0  → 只出品质 1~2
-//   slope=10 → 只出品质 9~10
-//   中间值平滑过渡，品质窗口随斜率线性滑动
-//   刷新次数越多，窗口整体向高品质方向偏移
+// 概率采用正态分布：
+//   中心品质 center = 用户输入的 1~10 整数
+//   该品质概率最高，两侧品质按正态分布（高斯）递减
+//   刷新次数越多，中心整体向高品质方向偏移
 function pickPrize(prizes, refreshCount) {
   if (!prizes || prizes.length === 0) return null;
 
-  // 斜率 slope：0~10，映射到品质中心 1.5~9.5
-  const slope = (currentData && currentData.probabilitySlope != null) ? currentData.probabilitySlope : 2.5;
-  const clampedSlope = Math.max(0, Math.min(10, slope));
-  let center = 1.5 + (clampedSlope / 10) * 8; // slope 0→1.5, slope 10→9.5
+  // 中心品质：1~10
+  const center = (currentData && currentData.probabilitySlope != null)
+    ? Math.max(1, Math.min(10, Math.round(currentData.probabilitySlope)))
+    : 3;
 
   // 刷新次数叠加偏移：越多越偏向高品质
   const K = 5;
   const t = refreshCount / (refreshCount + K); // 0→1
-  center = Math.min(10, center + t * 1.5);
+  const mu = Math.min(10, center + t * 1.5);
 
-  // 余弦平方窗口：距离中心 width 以内有权重，恰好为 0
-  const width = 1.5;
+  // 正态分布权重：sigma 控制扩散程度
+  const sigma = 1.6;
   const weights = prizes.map(pr => {
-    const dist = Math.abs(pr.quality - center);
-    if (dist >= width) return 0;
-    const x = (Math.PI * dist) / (2 * width);
-    return Math.cos(x) * Math.cos(x);
+    const diff = pr.quality - mu;
+    return Math.exp(-(diff * diff) / (2 * sigma * sigma));
   });
 
   const totalWeight = weights.reduce((a, b) => a + b, 0);
-  if (totalWeight <= 0) {
-    // 兜底：若所有奖品权重为 0（理论不会发生），返回最近品质的奖品
-    let best = prizes[0], bestDist = Infinity;
-    for (const pr of prizes) {
-      const d = Math.abs(pr.quality - center);
-      if (d < bestDist) { bestDist = d; best = pr; }
-    }
-    return best;
-  }
 
   let rand = Math.random() * totalWeight;
   for (let i = 0; i < prizes.length; i++) {
