@@ -6,8 +6,8 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 3,
-      "maxUses": 3
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "opened": true,
