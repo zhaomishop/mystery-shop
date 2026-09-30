@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>神秘商店 - 着迷温馨小店抽奖</title>
-  <link rel="stylesheet" href="style.css?v=20260929h">
+  <link rel="stylesheet" href="style.css?v=20260929k">
 </head>
 <body>
   <div class="container" id="app">
@@ -38,10 +38,22 @@
     <p class="modal-hint">长按图片可保存到手机相册</p>
   </div>
 
+  <!-- 口令输入模态框 -->
+  <div class="code-modal" id="codeModal">
+    <div class="code-modal-box">
+      <div class="code-modal-title">请输入口令</div>
+      <input type="text" class="code-modal-input" id="codeModalInput" placeholder="" autocomplete="off">
+      <div class="code-modal-actions">
+        <button class="code-modal-btn code-modal-btn-cancel" id="codeModalCancel">取消</button>
+        <button class="code-modal-btn code-modal-btn-confirm" id="codeModalConfirm">确定</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="app.js?v=20260929h"></script>
+  <script src="app.js?v=20260930c"></script>
 </body>
 </html>
