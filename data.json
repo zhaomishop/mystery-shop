@@ -1,13 +1,13 @@
 {
   "title": "神秘商店",
   "subtitle": "月光的金库",
-  "refreshCount": 10,
+  "refreshCount": 0,
   "probabilitySlope": 10,
   "refreshCodes": [
     {
       "code": "123",
       "uses": 0,
-      "maxUses": 10
+      "maxUses": 0
     }
   ],
   "opened": true,
