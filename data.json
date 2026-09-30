@@ -1,12 +1,12 @@
 {
   "title": "神秘商店",
   "subtitle": "月光的金库",
-  "refreshCount": 3,
+  "refreshCount": 4,
   "probabilitySlope": 3,
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 7,
+      "uses": 6,
       "maxUses": 10
     }
   ],
@@ -19,34 +19,22 @@
       "quality": 4
     },
     {
-      "id": 34,
-      "icon": "🌟",
+      "id": 24,
+      "icon": "🍀",
       "name": "新奖品",
-      "quality": 5
+      "quality": 3
     },
     {
-      "id": 30,
+      "id": 40,
+      "icon": "🔮",
+      "name": "新奖品",
+      "quality": 7
+    },
+    {
+      "id": 4,
       "icon": "💎",
-      "name": "新奖品",
+      "name": "精美奖品",
       "quality": 4
-    },
-    {
-      "id": 32,
-      "icon": "🌟",
-      "name": "新奖品",
-      "quality": 5
-    },
-    {
-      "id": 38,
-      "icon": "💎",
-      "name": "新奖品",
-      "quality": 4
-    },
-    {
-      "id": 54,
-      "icon": "🎀",
-      "name": "新奖品",
-      "quality": 2
     },
     {
       "id": 29,
@@ -55,16 +43,28 @@
       "quality": 4
     },
     {
+      "id": 55,
+      "icon": "🍀",
+      "name": "新奖品",
+      "quality": 3
+    },
+    {
       "id": 24,
       "icon": "🍀",
       "name": "新奖品",
       "quality": 3
     },
     {
-      "id": 21,
-      "icon": "🎀",
+      "id": 31,
+      "icon": "💎",
       "name": "新奖品",
-      "quality": 2
+      "quality": 4
+    },
+    {
+      "id": 56,
+      "icon": "💎",
+      "name": "新奖品",
+      "quality": 4
     }
   ],
   "prizes": [
