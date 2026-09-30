@@ -5,9 +5,33 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 6,
+      "uses": 5,
       "maxUses": 10,
       "grid": [
+        {
+          "id": 39,
+          "icon": "🔮",
+          "name": "新奖品",
+          "quality": 7
+        },
+        {
+          "id": 45,
+          "icon": "👑",
+          "name": "新奖品",
+          "quality": 8
+        },
+        {
+          "id": 64,
+          "icon": "🏆",
+          "name": "新奖品",
+          "quality": 10
+        },
+        {
+          "id": 39,
+          "icon": "🔮",
+          "name": "新奖品",
+          "quality": 7
+        },
         {
           "id": 36,
           "icon": "💝",
@@ -15,40 +39,10 @@
           "quality": 6
         },
         {
-          "id": 74,
-          "icon": "👑",
+          "id": 51,
+          "icon": "🏆",
           "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 40,
-          "icon": "🔮",
-          "name": "新奖品",
-          "quality": 7
-        },
-        {
-          "id": 37,
-          "icon": "💝",
-          "name": "新奖品",
-          "quality": 6
-        },
-        {
-          "id": 46,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 25,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        },
-        {
-          "id": 73,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
+          "quality": 10
         },
         {
           "id": 56,
@@ -57,14 +51,20 @@
           "quality": 4
         },
         {
-          "id": 35,
-          "icon": "💝",
+          "id": 7,
+          "icon": "🔮",
+          "name": "史诗奖品",
+          "quality": 7
+        },
+        {
+          "id": 70,
+          "icon": "🌈",
           "name": "新奖品",
-          "quality": 6
+          "quality": 9
         }
       ],
-      "refreshCount": 5,
-      "refreshTime": 1790753324918,
+      "refreshCount": 6,
+      "refreshTime": 1790753327217,
       "opened": true
     },
     {
