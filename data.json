@@ -497,6 +497,12 @@
       "icon": "🎁",
       "name": "粉钻*2（2000灵石）",
       "quality": 1
+    },
+    {
+      "id": 79,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0
