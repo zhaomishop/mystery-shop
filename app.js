@@ -137,6 +137,31 @@ function generateGrid(prizes, refreshCount) {
   return grid;
 }
 
+// ========== 倒计时 ==========
+let countdownTimer = null;
+
+function startCountdown() {
+  if (countdownTimer) clearInterval(countdownTimer);
+  const baseTime = (currentData && currentData.refreshTime) ? currentData.refreshTime : Date.now();
+  const endTime = baseTime + 30 * 60 * 1000; // 30分钟后
+  updateCountdown(endTime);
+  countdownTimer = setInterval(() => updateCountdown(endTime), 1000);
+}
+
+function updateCountdown(endTime) {
+  const remain = endTime - Date.now();
+  const el = document.getElementById('countdownTime');
+  if (!el) return;
+  if (remain <= 0) {
+    el.textContent = '00:00';
+    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+    return;
+  }
+  const m = Math.floor(remain / 60000);
+  const s = Math.floor((remain % 60000) / 1000);
+  el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+
 // ========== 渲染 ==========
 function render() {
   if (!currentData) return;
@@ -243,6 +268,7 @@ async function handleRefresh() {
 
   // 增加全局刷新次数（影响概率）
   currentData.refreshCount = (currentData.refreshCount || 0) + 1;
+  currentData.refreshTime = Date.now(); // 记录刷新时间，用于倒计时
 
   // 生成新的九宫格奖品
   currentData.currentGrid = generateGrid(currentData.prizes, currentData.refreshCount);
@@ -251,6 +277,7 @@ async function handleRefresh() {
   const ok = await saveData(currentData);
   if (ok) {
     showToast(`刷新成功！该口令剩余 ${entry.uses} 次`);
+    startCountdown();
     render();
   } else {
     showToast('刷新失败，请重试');
@@ -295,6 +322,15 @@ async function init() {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('content').style.display = 'block';
     render();
+    // 如果已刷新过且在30分钟内，恢复倒计时
+    if (data.opened && data.refreshTime) {
+      const endTime = data.refreshTime + 30 * 60 * 1000;
+      if (endTime > Date.now()) {
+        if (countdownTimer) clearInterval(countdownTimer);
+        updateCountdown(endTime);
+        countdownTimer = setInterval(() => updateCountdown(endTime), 1000);
+      }
+    }
   } else {
     document.getElementById('loading').textContent = '数据加载失败，请刷新重试';
   }
