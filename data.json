@@ -1,162 +1,32 @@
 {
-  "title": "神秘商店",
+  "title": "月光的神秘商店",
   "subtitle": "月光的金库",
   "probabilitySlope": 1,
   "refreshCodes": [
     {
       "code": "测试123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "零食555",
       "uses": 7,
-      "maxUses": 7,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 7
     },
     {
       "code": "月光666",
       "uses": 6,
-      "maxUses": 6,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 6
     },
     {
       "code": "小迁456",
       "uses": 6,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 33,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 33,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 34,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 33,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 56,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        },
-        {
-          "id": 5,
-          "icon": "🌟",
-          "name": "稀有奖品",
-          "quality": 5
-        },
-        {
-          "id": 41,
-          "icon": "🔮",
-          "name": "新奖品",
-          "quality": 7
-        },
-        {
-          "id": 32,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 37,
-          "icon": "💝",
-          "name": "新奖品",
-          "quality": 6
-        }
-      ],
-      "refreshCount": 4,
-      "refreshTime": 1790774033019,
-      "opened": true
+      "maxUses": 6
     },
     {
       "code": "汜汜123",
       "uses": 2,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 9,
-          "icon": "🌈",
-          "name": "神话奖品",
-          "quality": 9
-        },
-        {
-          "id": 73,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "史诗奖品",
-          "quality": 7
-        },
-        {
-          "id": 66,
-          "icon": "🌈",
-          "name": "新奖品",
-          "quality": 9
-        },
-        {
-          "id": 46,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 48,
-          "icon": "🌈",
-          "name": "新奖品",
-          "quality": 9
-        },
-        {
-          "id": 34,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 59,
-          "icon": "🏆",
-          "name": "新奖品",
-          "quality": 10
-        },
-        {
-          "id": 68,
-          "icon": "🌈",
-          "name": "新奖品",
-          "quality": 9
-        }
-      ],
-      "refreshCount": 8,
-      "refreshTime": 1790774324034,
-      "opened": true
+      "maxUses": 2
     }
   ],
   "prizes": [
@@ -616,5 +486,6 @@
       "name": "新奖品",
       "quality": 7
     }
-  ]
+  ],
+  "refreshCount": 0
 }
