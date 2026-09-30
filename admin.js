@@ -108,8 +108,8 @@ function renderCodeList() {
   header.className = 'prize-header';
   header.innerHTML = `
     <span class="col-code">口令</span>
-    <span class="col-max">可用次数</span>
-    <span class="col-remain">剩余</span>
+    <span class="col-max">次数</span>
+    <span class="col-add">增加次数</span>
     <span class="col-actions">操作</span>
   `;
   list.appendChild(header);
@@ -120,40 +120,43 @@ function renderCodeList() {
     item.className = 'code-item';
     item.innerHTML = `
       <input type="text" class="code-text" value="${c.code || ''}" placeholder="输入口令">
-      <input type="number" class="code-max" value="${c.maxUses || 0}" min="0" placeholder="0">
-      <span class="remain-badge ${(c.uses || 0) === 0 ? 'empty' : ''}">${c.uses || 0}</span>
-      <div class="code-actions">
-        <button class="btn-small btn-move" data-idx="${idx}" data-dir="up" title="上移">▲</button>
-        <button class="btn-small btn-move" data-idx="${idx}" data-dir="down" title="下移">▼</button>
-        <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
+      <input type="number" class="code-uses" value="${c.uses || 0}" min="0" placeholder="0">
+      <div class="code-add-wrap">
+        <input type="number" class="code-add-input" min="1" placeholder="+">
+        <button class="btn-small btn-add-count" data-idx="${idx}" title="增加">+</button>
       </div>
+      <button class="btn-small btn-del" data-idx="${idx}" title="删除">✕</button>
     `;
     list.appendChild(item);
   });
 
-  // 删除
+  // 删除口令
   list.querySelectorAll('.btn-del').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const idx = parseInt(e.target.dataset.idx);
       currentData.refreshCodes.splice(idx, 1);
       renderCodeList();
+      autoSave();
     });
   });
 
-  // 上移/下移
-  list.querySelectorAll('.btn-move').forEach(btn => {
+  // 增加次数按钮
+  list.querySelectorAll('.btn-add-count').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const idx = parseInt(e.target.dataset.idx);
-      const dir = e.target.dataset.dir;
-      const target = dir === 'up' ? idx - 1 : idx + 1;
-      if (target < 0 || target >= currentData.refreshCodes.length) return;
-      [currentData.refreshCodes[idx], currentData.refreshCodes[target]] = [currentData.refreshCodes[target], currentData.refreshCodes[idx]];
-      renderCodeList();
+      const addInput = e.target.parentElement.querySelector('.code-add-input');
+      const addVal = parseInt(addInput.value) || 0;
+      if (addVal > 0) {
+        currentData.refreshCodes[idx].uses = (currentData.refreshCodes[idx].uses || 0) + addVal;
+        addInput.value = '';
+        renderCodeList();
+        autoSave();
+      }
     });
   });
 
-  // 口令输入失焦自动保存
-  list.querySelectorAll('.code-text, .code-max').forEach(input => {
+  // 口令和次数输入失焦自动保存
+  list.querySelectorAll('.code-text, .code-uses').forEach(input => {
     input.addEventListener('blur', autoSave);
   });
 }
@@ -245,15 +248,12 @@ function collectFormData() {
     };
   });
 
-  // 收集口令列表（保留已存在口令的剩余次数，新增口令默认满额）
-  const existingCodes = currentData.refreshCodes || [];
+  // 收集口令列表（次数直接从输入框读取）
   const codeItems = document.querySelectorAll('.code-item');
   currentData.refreshCodes = Array.from(codeItems).map((item) => {
     const code = item.querySelector('.code-text').value.trim();
-    const maxUses = Math.max(0, parseInt(item.querySelector('.code-max').value) || 0);
-    const existing = existingCodes.find(c => c.code === code);
-    const uses = existing ? Math.min(existing.uses || 0, maxUses) : maxUses;
-    return { code, uses, maxUses };
+    const uses = Math.max(0, parseInt(item.querySelector('.code-uses').value) || 0);
+    return { code, uses, maxUses: uses };
   }).filter(c => c.code); // 过滤掉空口令
 
   return currentData;
@@ -327,22 +327,6 @@ document.getElementById('btnResetPool').addEventListener('click', async () => {
   const ok = await saveData(currentData);
   if (ok) {
     showToast('奖池已重置');
-    render();
-  } else {
-    showToast('重置失败');
-  }
-});
-
-// 重置口令次数：所有口令剩余次数恢复为设定值（不影响奖池）
-document.getElementById('btnResetCodes').addEventListener('click', async () => {
-  if (!confirm('确定要重置口令次数吗？\n\n所有口令的剩余次数将恢复为设定值。\n（奖池状态不受影响）')) return;
-
-  collectFormData();
-  (currentData.refreshCodes || []).forEach(c => { c.uses = c.maxUses || 0; });
-
-  const ok = await saveData(currentData);
-  if (ok) {
-    showToast('口令次数已恢复');
     render();
   } else {
     showToast('重置失败');
