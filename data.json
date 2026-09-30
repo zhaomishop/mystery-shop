@@ -8,6 +8,11 @@
       "code": "123",
       "uses": 6,
       "maxUses": 6
+    },
+    {
+      "code": "555",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "opened": true,
