@@ -1,26 +1,71 @@
 {
   "title": "神秘商店",
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
-  "refreshCount": 0,
+  "refreshCount": 1,
   "probabilitySlope": 4.5,
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 1,
+      "uses": 0,
       "maxUses": 10
     }
   ],
-  "opened": false,
+  "opened": true,
   "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    {
+      "id": 16,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 19,
+      "icon": "🎀",
+      "name": "新奖品",
+      "quality": 2
+    },
+    {
+      "id": 18,
+      "icon": "🎀",
+      "name": "新奖品",
+      "quality": 2
+    },
+    {
+      "id": 4,
+      "icon": "💎",
+      "name": "精美奖品",
+      "quality": 4
+    },
+    {
+      "id": 13,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 33,
+      "icon": "🌟",
+      "name": "新奖品",
+      "quality": 5
+    },
+    {
+      "id": 1,
+      "icon": "🎁",
+      "name": "小奖品",
+      "quality": 1
+    },
+    {
+      "id": 4,
+      "icon": "💎",
+      "name": "精美奖品",
+      "quality": 4
+    },
+    {
+      "id": 1,
+      "icon": "🎁",
+      "name": "小奖品",
+      "quality": 1
+    }
   ],
   "prizes": [
     {
