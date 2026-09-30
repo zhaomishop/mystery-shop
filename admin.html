@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>管理员后台 - 神秘商店</title>
-  <link rel="stylesheet" href="style.css?v=20260930g">
+  <link rel="stylesheet" href="style.css?v=20260930p">
 </head>
 <body>
   <div class="admin-container">
@@ -59,18 +59,6 @@
         </p>
         <div id="codeList"></div>
         <button class="btn-small btn-add" id="btnAddCode">+ 添加口令</button>
-
-        <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1);">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <span style="font-size:0.85em;color:rgba(255,255,255,0.8);">累计刷新次数（影响概率）</span>
-            <span class="count-display" id="countDisplay" style="margin:0;font-size:1.3em;">0</span>
-          </div>
-          <div class="admin-actions">
-            <button class="btn-small btn-count" id="btnAddCount">+1</button>
-            <button class="btn-small btn-count" id="btnAddCount5">+5</button>
-            <button class="btn-small btn-count" id="btnResetCount">清零</button>
-          </div>
-        </div>
       </div>
 
       <!-- 重置奖池 -->
@@ -80,7 +68,7 @@
           <button class="btn-reset" id="btnResetPool">重置奖池</button>
         </div>
         <p style="font-size:0.78em;color:rgba(255,255,255,0.5);margin-top:8px;line-height:1.5;">
-          重置奖池：九宫格恢复未开启状态，累计刷新次数清零。
+          重置奖池：九宫格恢复未开启状态。
         </p>
       </div>
 
@@ -95,6 +83,6 @@
   </div>
 
   <div class="toast" id="toast"></div>
-  <script src="admin.js?v=20260930g"></script>
+  <script src="admin.js?v=20260930p"></script>
 </body>
 </html>
