@@ -14,32 +14,32 @@
     },
     {
       "code": "零食555",
-      "uses": 9,
+      "uses": 8,
       "maxUses": 10,
       "grid": [
         {
-          "id": 16,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
+          "id": 3,
+          "icon": "🍀",
+          "name": "幸运奖品",
+          "quality": 3
         },
         {
-          "id": 11,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 25,
+          "id": 27,
           "icon": "🍀",
           "name": "新奖品",
           "quality": 3
         },
         {
-          "id": 30,
+          "id": 4,
           "icon": "💎",
-          "name": "新奖品",
+          "name": "精美奖品",
           "quality": 4
+        },
+        {
+          "id": 33,
+          "icon": "🌟",
+          "name": "新奖品",
+          "quality": 5
         },
         {
           "id": 23,
@@ -48,32 +48,32 @@
           "quality": 3
         },
         {
-          "id": 17,
-          "icon": "🎀",
+          "id": 24,
+          "icon": "🍀",
           "name": "新奖品",
-          "quality": 2
+          "quality": 3
         },
         {
-          "id": 17,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
+          "id": 3,
+          "icon": "🍀",
+          "name": "幸运奖品",
+          "quality": 3
         },
         {
-          "id": 18,
-          "icon": "🎀",
+          "id": 34,
+          "icon": "🌟",
           "name": "新奖品",
-          "quality": 2
+          "quality": 5
         },
         {
-          "id": 19,
-          "icon": "🎀",
+          "id": 32,
+          "icon": "🌟",
           "name": "新奖品",
-          "quality": 2
+          "quality": 5
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1790773816724,
+      "refreshCount": 2,
+      "refreshTime": 1790773819411,
       "opened": true
     },
     {
