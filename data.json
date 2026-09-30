@@ -11,8 +11,8 @@
     },
     {
       "code": "555",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 5,
+      "maxUses": 5
     }
   ],
   "opened": true,
