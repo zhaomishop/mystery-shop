@@ -327,6 +327,18 @@ async function handleScreenshot() {
   const modal = document.getElementById('modal');
   const img = document.getElementById('screenshotImg');
 
+  // 海报库未加载（如 CDN 被拦截）时给出明确提示，避免静默失败
+  if (typeof window.html2canvas !== 'function') {
+    console.error('[poster] html2canvas not loaded');
+    showToast('海报库加载失败，请检查网络后刷新页面重试');
+    return;
+  }
+
+  if (!currentData) {
+    showToast('数据未加载，请刷新页面重试');
+    return;
+  }
+
   showToast('正在生成海报...');
 
   const entry = (currentData.refreshCodes || []).find(c => c.code === currentCode);
@@ -357,9 +369,9 @@ async function handleScreenshot() {
   poster.appendChild(titleDiv);
 
   // 分割线
-  poster.appendChild(Object.assign(document.createElement('div'), {
-    style: 'height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.4),transparent);margin:18px 0;'
-  }));
+  const divider = document.createElement('div');
+  divider.style.cssText = 'height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.4),transparent);margin:18px 0;';
+  poster.appendChild(divider);
 
   // 开启者
   const openerDiv = document.createElement('div');
@@ -423,10 +435,11 @@ async function handleScreenshot() {
     img.src = dataUrl;
     modal.classList.add('show');
   } catch (e) {
-    console.error('Screenshot failed:', e);
-    showToast('海报生成失败');
+    console.error('[poster] html2canvas failed:', e);
+    const reason = (e && (e.message || e.name)) ? (e.name + ': ' + e.message) : '未知错误';
+    showToast('海报生成失败：' + reason);
   } finally {
-    document.body.removeChild(poster);
+    if (poster.parentNode) document.body.removeChild(poster);
   }
 }
 
