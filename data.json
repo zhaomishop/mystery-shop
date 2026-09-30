@@ -5,45 +5,9 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 9,
+      "uses": 8,
       "maxUses": 10,
       "grid": [
-        {
-          "id": 20,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
-        {
-          "id": 54,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
-        {
-          "id": 22,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
-        {
-          "id": 13,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 11,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 54,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
-        },
         {
           "id": 12,
           "icon": "🎁",
@@ -51,20 +15,56 @@
           "quality": 1
         },
         {
-          "id": 38,
+          "id": 54,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 16,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 53,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 5,
+          "icon": "🌟",
+          "name": "稀有奖品",
+          "quality": 5
+        },
+        {
+          "id": 23,
+          "icon": "🍀",
+          "name": "新奖品",
+          "quality": 3
+        },
+        {
+          "id": 29,
           "icon": "💎",
           "name": "新奖品",
           "quality": 4
         },
         {
-          "id": 22,
-          "icon": "🎀",
+          "id": 24,
+          "icon": "🍀",
           "name": "新奖品",
-          "quality": 2
+          "quality": 3
+        },
+        {
+          "id": 15,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1790753926846,
+      "refreshCount": 2,
+      "refreshTime": 1790753930670,
       "opened": true
     },
     {
