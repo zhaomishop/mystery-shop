@@ -297,15 +297,15 @@
     },
     {
       "id": 39,
-      "icon": "🎁",
+      "icon": "🌟",
       "name": "新奖品",
-      "quality": 1
+      "quality": 5
     },
     {
       "id": 40,
-      "icon": "🎁",
+      "icon": "💎",
       "name": "新奖品",
-      "quality": 1
+      "quality": 4
     }
   ]
 }
