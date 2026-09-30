@@ -240,12 +240,15 @@ function collectFormData() {
     };
   });
 
-  // 收集口令列表（保存时剩余次数重置为设定的可用次数）
+  // 收集口令列表（保留已存在口令的剩余次数，新增口令默认满额）
+  const existingCodes = currentData.refreshCodes || [];
   const codeItems = document.querySelectorAll('.code-item');
   currentData.refreshCodes = Array.from(codeItems).map((item) => {
     const code = item.querySelector('.code-text').value.trim();
     const maxUses = Math.max(0, parseInt(item.querySelector('.code-max').value) || 0);
-    return { code, uses: maxUses, maxUses };
+    const existing = existingCodes.find(c => c.code === code);
+    const uses = existing ? Math.min(existing.uses || 0, maxUses) : maxUses;
+    return { code, uses, maxUses };
   }).filter(c => c.code); // 过滤掉空口令
 
   return currentData;
@@ -307,20 +310,34 @@ document.getElementById('btnResetCount').addEventListener('click', () => {
   }
 });
 
+// 重置奖池：九宫格恢复未开启 + 刷新次数清零（不影响口令）
 document.getElementById('btnResetPool').addEventListener('click', async () => {
-  if (!confirm('确定要重置奖池吗？\n\n九宫格将恢复未开启状态，\n累计刷新次数清零，\n所有口令次数恢复为设定值。')) return;
+  if (!confirm('确定要重置奖池吗？\n\n九宫格将恢复未开启状态，\n累计刷新次数清零。\n（口令次数不受影响）')) return;
 
   collectFormData();
   currentData.opened = false;
   currentData.currentGrid = [null, null, null, null, null, null, null, null, null];
-  // 累计刷新次数清零
   currentData.refreshCount = 0;
-  // 所有口令次数恢复为设定值
+
+  const ok = await saveData(currentData);
+  if (ok) {
+    showToast('奖池已重置');
+    render();
+  } else {
+    showToast('重置失败');
+  }
+});
+
+// 重置口令次数：所有口令剩余次数恢复为设定值（不影响奖池）
+document.getElementById('btnResetCodes').addEventListener('click', async () => {
+  if (!confirm('确定要重置口令次数吗？\n\n所有口令的剩余次数将恢复为设定值。\n（奖池状态不受影响）')) return;
+
+  collectFormData();
   (currentData.refreshCodes || []).forEach(c => { c.uses = c.maxUses || 0; });
 
   const ok = await saveData(currentData);
   if (ok) {
-    showToast('奖池已重置，口令次数已恢复');
+    showToast('口令次数已恢复');
     render();
   } else {
     showToast('重置失败');
