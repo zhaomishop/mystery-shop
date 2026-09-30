@@ -431,12 +431,12 @@ body::before {
 .admin-container {
   max-width: 700px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 10px;
 }
 
 .admin-container h1 {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   font-size: 1.5em;
   color: #ffd700;
 }
@@ -446,18 +446,18 @@ body::before {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 14px 16px;
-  margin-bottom: 14px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
 }
 
 .admin-section h2 {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   font-size: 1.05em;
   color: #ffd700;
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 7px;
 }
 
 .form-group label {
@@ -596,12 +596,14 @@ body::before {
 .prize-item {
   position: relative;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 3px;
   padding: 2px 4px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 5px;
+  overflow: hidden;
   transition: all 0.15s;
 }
 
