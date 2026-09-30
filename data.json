@@ -10,13 +10,13 @@
     },
     {
       "code": "小迁123",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     },
     {
       "code": "沐崽789",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "prizes": [
