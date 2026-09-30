@@ -927,26 +927,6 @@ body::before {
   background: linear-gradient(135deg, #3498db, #2980b9);
 }
 
-.btn-count {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-}
-
-.count-display {
-  font-size: 1.6em;
-  font-weight: bold;
-  color: #ffd700;
-  text-align: center;
-  margin: 6px 0;
-}
-
-.admin-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-
 .back-link {
   display: block;
   text-align: center;
