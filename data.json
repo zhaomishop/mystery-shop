@@ -6,84 +6,17 @@
     {
       "code": "测试123",
       "uses": 7,
-      "maxUses": 7,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 7
     },
     {
       "code": "零食555",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "月光666",
       "uses": 5,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 4,
-          "icon": "💎",
-          "name": "精美奖品",
-          "quality": 4
-        },
-        {
-          "id": 37,
-          "icon": "💝",
-          "name": "新奖品",
-          "quality": 6
-        },
-        {
-          "id": 32,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "史诗奖品",
-          "quality": 7
-        },
-        {
-          "id": 27,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        },
-        {
-          "id": 8,
-          "icon": "👑",
-          "name": "传说奖品",
-          "quality": 8
-        },
-        {
-          "id": 67,
-          "icon": "🌈",
-          "name": "新奖品",
-          "quality": 9
-        },
-        {
-          "id": 74,
-          "icon": "👑",
-          "name": "新奖品",
-          "quality": 8
-        },
-        {
-          "id": 31,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        }
-      ],
-      "refreshCount": 5,
-      "refreshTime": 1790754468125,
-      "opened": true
+      "maxUses": 5
     }
   ],
   "prizes": [
@@ -543,5 +476,6 @@
       "name": "新奖品",
       "quality": 7
     }
-  ]
+  ],
+  "refreshCount": 0
 }
