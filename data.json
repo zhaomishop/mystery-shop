@@ -6,7 +6,7 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 5,
+      "uses": 10,
       "maxUses": 10
     }
   ],
