@@ -5,26 +5,50 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 8,
+      "uses": 7,
       "maxUses": 10,
       "grid": [
         {
-          "id": 12,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
+          "id": 4,
+          "icon": "💎",
+          "name": "精美奖品",
+          "quality": 4
         },
         {
-          "id": 54,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
+          "id": 3,
+          "icon": "🍀",
+          "name": "幸运奖品",
+          "quality": 3
         },
         {
-          "id": 16,
-          "icon": "🎁",
+          "id": 4,
+          "icon": "💎",
+          "name": "精美奖品",
+          "quality": 4
+        },
+        {
+          "id": 33,
+          "icon": "🌟",
           "name": "新奖品",
-          "quality": 1
+          "quality": 5
+        },
+        {
+          "id": 34,
+          "icon": "🌟",
+          "name": "新奖品",
+          "quality": 5
+        },
+        {
+          "id": 28,
+          "icon": "💎",
+          "name": "新奖品",
+          "quality": 4
+        },
+        {
+          "id": 34,
+          "icon": "🌟",
+          "name": "新奖品",
+          "quality": 5
         },
         {
           "id": 53,
@@ -33,38 +57,14 @@
           "quality": 1
         },
         {
-          "id": 5,
-          "icon": "🌟",
-          "name": "稀有奖品",
-          "quality": 5
-        },
-        {
-          "id": 23,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        },
-        {
-          "id": 29,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        },
-        {
           "id": 24,
           "icon": "🍀",
           "name": "新奖品",
           "quality": 3
-        },
-        {
-          "id": 15,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
         }
       ],
-      "refreshCount": 2,
-      "refreshTime": 1790753930670,
+      "refreshCount": 3,
+      "refreshTime": 1790753937309,
       "opened": true
     },
     {
