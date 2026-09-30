@@ -502,9 +502,9 @@ body::before {
 
 /* 口令列表列宽 */
 .prize-header .col-code { flex: 1; }
-.prize-header .col-max { width: 80px; text-align: center; }
-.prize-header .col-remain { width: 50px; text-align: center; }
-.prize-header .col-actions { width: 78px; text-align: center; }
+.prize-header .col-max { width: 70px; text-align: center; }
+.prize-header .col-add { width: 100px; text-align: center; }
+.prize-header .col-actions { width: 40px; text-align: center; }
 
 .code-item {
   display: flex;
@@ -547,43 +547,62 @@ body::before {
   font-family: monospace;
 }
 
-.code-item .code-max {
-  width: 80px;
+.code-item .code-uses {
+  width: 70px;
   text-align: center;
   -moz-appearance: textfield;
 }
 
-.code-item .code-max::-webkit-outer-spin-button,
-.code-item .code-max::-webkit-inner-spin-button {
+.code-item .code-uses::-webkit-outer-spin-button,
+.code-item .code-uses::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.remain-badge {
-  display: inline-flex;
+.code-add-wrap {
+  display: flex;
+  gap: 3px;
+  width: 100px;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 26px;
-  border-radius: 13px;
-  font-size: 0.8em;
-  font-weight: 700;
-  color: #fff;
+}
+
+.code-add-wrap .code-add-input {
+  width: 52px;
+  text-align: center;
+  -moz-appearance: textfield;
+  padding: 4px 4px;
+}
+
+.code-add-wrap .code-add-input::-webkit-outer-spin-button,
+.code-add-wrap .code-add-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn-add-count {
   background: linear-gradient(135deg, #4ecdc4, #44a08d);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
   flex-shrink: 0;
 }
 
-.remain-badge.empty {
-  background: #6b7280;
-  opacity: 0.7;
+.btn-add-count:hover {
+  transform: scale(1.05);
 }
 
-.code-actions {
-  display: flex;
-  gap: 3px;
-  width: 78px;
-  justify-content: center;
+.code-item .btn-del {
+  width: 32px;
+  height: 26px;
+  padding: 0;
+  font-size: 0.7em;
+  line-height: 1;
+  background: rgba(231, 76, 60, 0.7);
 }
 
 /* 奖池网格布局 */
