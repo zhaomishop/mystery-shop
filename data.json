@@ -5,26 +5,20 @@
   "refreshCodes": [
     {
       "code": "测试123",
-      "uses": 8,
+      "uses": 7,
       "maxUses": 10,
       "grid": [
         {
-          "id": 16,
-          "icon": "🎀",
-          "name": "粉钻*2（500灵石）",
-          "quality": 2
+          "id": 23,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
         },
         {
-          "id": 12,
-          "icon": "🎁",
-          "name": "粉钻*2（500灵石）",
-          "quality": 1
-        },
-        {
-          "id": 33,
-          "icon": "🌟",
-          "name": "月光宝盒*2（600灵石）",
-          "quality": 5
+          "id": 24,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
         },
         {
           "id": 54,
@@ -33,38 +27,44 @@
           "quality": 3
         },
         {
-          "id": 21,
-          "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
-          "quality": 2
-        },
-        {
-          "id": 20,
-          "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
-          "quality": 2
-        },
-        {
-          "id": 16,
-          "icon": "🎀",
-          "name": "粉钻*2（500灵石）",
-          "quality": 2
-        },
-        {
-          "id": 27,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
+          "id": 32,
+          "icon": "🌟",
+          "name": "月光宝盒*2（600灵石）",
+          "quality": 5
         },
         {
           "id": 55,
           "icon": "💎",
           "name": "采访双倍卡*10（2500灵石）",
           "quality": 4
+        },
+        {
+          "id": 31,
+          "icon": "🌟",
+          "name": "月光宝盒*2（600灵石）",
+          "quality": 5
+        },
+        {
+          "id": 22,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 12,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 25,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
         }
       ],
-      "refreshCount": 2,
-      "refreshTime": 1790776876027,
+      "refreshCount": 3,
+      "refreshTime": 1790776880340,
       "opened": true
     },
     {
