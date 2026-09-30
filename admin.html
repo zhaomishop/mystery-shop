@@ -45,9 +45,9 @@
         <button class="btn-small btn-add" id="btnAddPrize">+ 添加奖品</button>
 
         <div class="probability-slope-row">
-          <label for="slopeInput">概率斜率</label>
-          <input type="number" id="slopeInput" step="0.1" min="0" max="10" placeholder="2.5">
-          <span class="slope-hint">0→只出品质1~2，10→只出品质9~10，中间平滑过渡</span>
+          <label for="slopeInput">中心品质</label>
+          <input type="number" id="slopeInput" step="1" min="1" max="10" placeholder="3">
+          <span class="slope-hint">输入1~10，该品质概率最高，两侧按正态分布递减</span>
         </div>
       </div>
 
