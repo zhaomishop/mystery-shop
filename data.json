@@ -96,66 +96,66 @@
     },
     {
       "code": "汜汜123",
-      "uses": 8,
+      "uses": 6,
       "maxUses": 10,
       "grid": [
         {
-          "id": 20,
+          "id": 22,
           "icon": "🎀",
           "name": "新奖品",
           "quality": 2
         },
         {
-          "id": 54,
-          "icon": "🎀",
+          "id": 56,
+          "icon": "💎",
           "name": "新奖品",
-          "quality": 2
+          "quality": 4
         },
         {
-          "id": 25,
-          "icon": "🍀",
+          "id": 57,
+          "icon": "🏆",
           "name": "新奖品",
-          "quality": 3
+          "quality": 10
         },
         {
-          "id": 55,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
+          "id": 4,
+          "icon": "💎",
+          "name": "精美奖品",
+          "quality": 4
         },
         {
-          "id": 17,
-          "icon": "🎀",
+          "id": 40,
+          "icon": "🔮",
           "name": "新奖品",
-          "quality": 2
+          "quality": 7
         },
         {
-          "id": 25,
-          "icon": "🍀",
+          "id": 76,
+          "icon": "🔮",
           "name": "新奖品",
-          "quality": 3
+          "quality": 7
         },
         {
-          "id": 54,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
+          "id": 4,
+          "icon": "💎",
+          "name": "精美奖品",
+          "quality": 4
         },
         {
-          "id": 26,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
+          "id": 4,
+          "icon": "💎",
+          "name": "精美奖品",
+          "quality": 4
         },
         {
-          "id": 20,
-          "icon": "🎀",
-          "name": "新奖品",
-          "quality": 2
+          "id": 8,
+          "icon": "👑",
+          "name": "传说奖品",
+          "quality": 8
         }
       ],
-      "refreshCount": 2,
-      "refreshTime": 1790774317621,
+      "refreshCount": 4,
+      "refreshTime": 1790774319433,
       "opened": true
     }
   ],
