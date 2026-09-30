@@ -5,44 +5,50 @@
   "refreshCodes": [
     {
       "code": "测试123",
-      "uses": 9,
+      "uses": 8,
       "maxUses": 10,
       "grid": [
         {
-          "id": 20,
+          "id": 16,
           "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
+          "name": "粉钻*2（500灵石）",
           "quality": 2
         },
         {
-          "id": 36,
-          "icon": "💝",
-          "name": "六字前缀卡7天（9000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 27,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 20,
-          "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
-          "quality": 2
-        },
-        {
-          "id": 14,
+          "id": 12,
           "icon": "🎁",
           "name": "粉钻*2（500灵石）",
           "quality": 1
         },
         {
-          "id": 25,
+          "id": 33,
+          "icon": "🌟",
+          "name": "月光宝盒*2（600灵石）",
+          "quality": 5
+        },
+        {
+          "id": 54,
           "icon": "🍀",
           "name": "粉钻*10（2888灵石）",
           "quality": 3
+        },
+        {
+          "id": 21,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 20,
+          "icon": "🎀",
+          "name": "粉钻*5（1288灵石）",
+          "quality": 2
+        },
+        {
+          "id": 16,
+          "icon": "🎀",
+          "name": "粉钻*2（500灵石）",
+          "quality": 2
         },
         {
           "id": 27,
@@ -51,20 +57,14 @@
           "quality": 4
         },
         {
-          "id": 2,
-          "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
-          "quality": 2
-        },
-        {
-          "id": 19,
-          "icon": "🎀",
-          "name": "粉钻*5（1288灵石）",
-          "quality": 2
+          "id": 55,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1790776871224,
+      "refreshCount": 2,
+      "refreshTime": 1790776876027,
       "opened": true
     },
     {
