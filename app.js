@@ -357,12 +357,11 @@ async function handleScreenshot() {
     color:#fff;
   `;
 
-  // 顶部标题
+  // 顶部标题（避免 background-clip:text，QQ浏览器老内核会触发 html2canvas 的 createPattern 0 尺寸 bug）
   const titleDiv = document.createElement('div');
   titleDiv.innerHTML = `
     <div style="text-align:center;font-size:30px;font-weight:700;letter-spacing:6px;
-      background:linear-gradient(180deg,#fff4c2,#ffd700,#f5a623,#c41e3a,#8b0000);
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      color:#ffd700;text-shadow:0 1px 0 #f5a623,0 2px 0 #c41e3a,0 3px 6px rgba(139,0,0,0.6);
       margin-bottom:6px;">月光宝盒</div>
     <div style="text-align:center;font-size:13px;color:rgba(255,215,0,0.6);letter-spacing:3px;">MYSTERY SHOP · 着迷温馨小店</div>
   `;
@@ -370,7 +369,7 @@ async function handleScreenshot() {
 
   // 分割线
   const divider = document.createElement('div');
-  divider.style.cssText = 'height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.4),transparent);margin:18px 0;';
+  divider.style.cssText = 'height:1px;background:rgba(255,215,0,0.4);margin:18px 0;';
   poster.appendChild(divider);
 
   // 开启者
@@ -378,11 +377,11 @@ async function handleScreenshot() {
   openerDiv.style.cssText = 'text-align:center;margin-bottom:22px;';
   openerDiv.innerHTML = `
     <div style="font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:6px;letter-spacing:2px;">月光宝盒开启者</div>
-    <div style="font-size:26px;font-weight:700;color:#ffd700;text-shadow:0 0 12px rgba(255,215,0,0.5);letter-spacing:3px;">${displayName}</div>
+    <div style="font-size:26px;font-weight:700;color:#ffd700;letter-spacing:3px;">${displayName}</div>
   `;
   poster.appendChild(openerDiv);
 
-  // 九宫格奖池
+  // 九宫格奖池（避免 box-shadow，老内核 html2canvas 不稳定，改用 border 强调）
   const gridDiv = document.createElement('div');
   gridDiv.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:22px;';
 
@@ -392,9 +391,8 @@ async function handleScreenshot() {
       const prize = currentGrid[i];
       const qc = getQualityColor(prize.quality);
       cell.style.cssText = `
-        background:${qc.bg};border:1.5px solid ${qc.border};border-radius:12px;
+        background:${qc.bg};border:2px solid ${qc.border};border-radius:12px;
         padding:14px 8px;text-align:center;
-        box-shadow:0 0 12px ${qc.border};
       `;
       cell.innerHTML = `
         <div style="font-size:24px;margin-bottom:4px;">${qualityIcon(prize.quality)}</div>
@@ -403,10 +401,10 @@ async function handleScreenshot() {
       `;
     } else {
       cell.style.cssText = `
-        background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);
+        background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.15);
         border-radius:12px;padding:14px 8px;text-align:center;
       `;
-      cell.innerHTML = `<div style="font-size:24px;opacity:0.3;">${COVER_ICON}</div>`;
+      cell.innerHTML = `<div style="font-size:24px;color:rgba(255,255,255,0.3);">${COVER_ICON}</div>`;
     }
     gridDiv.appendChild(cell);
   }
