@@ -13,6 +13,11 @@
       "code": "555",
       "uses": 10,
       "maxUses": 10
+    },
+    {
+      "code": "666",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "opened": true,
