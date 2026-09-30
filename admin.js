@@ -92,7 +92,6 @@ function render() {
 
   document.getElementById('titleInput').value = currentData.title || '';
   document.getElementById('subtitleInput').value = currentData.subtitle || '';
-  document.getElementById('countDisplay').textContent = currentData.refreshCount || 0;
   document.getElementById('slopeInput').value = currentData.probabilitySlope != null ? Math.round(currentData.probabilitySlope) : 3;
 
   renderPrizeList();
@@ -295,34 +294,13 @@ document.getElementById('btnAddCode').addEventListener('click', () => {
   autoSave();
 });
 
-document.getElementById('btnAddCount').addEventListener('click', () => {
-  currentData.refreshCount = (currentData.refreshCount || 0) + 1;
-  document.getElementById('countDisplay').textContent = currentData.refreshCount;
-  autoSave();
-});
-
-document.getElementById('btnAddCount5').addEventListener('click', () => {
-  currentData.refreshCount = (currentData.refreshCount || 0) + 5;
-  document.getElementById('countDisplay').textContent = currentData.refreshCount;
-  autoSave();
-});
-
-document.getElementById('btnResetCount').addEventListener('click', () => {
-  if (confirm('确定要将累计刷新次数清零吗？')) {
-    currentData.refreshCount = 0;
-    document.getElementById('countDisplay').textContent = 0;
-    autoSave();
-  }
-});
-
-// 重置奖池：九宫格恢复未开启 + 刷新次数清零（不影响口令）
+// 重置奖池：九宫格恢复未开启（不影响口令）
 document.getElementById('btnResetPool').addEventListener('click', async () => {
-  if (!confirm('确定要重置奖池吗？\n\n九宫格将恢复未开启状态，\n累计刷新次数清零。\n（口令次数不受影响）')) return;
+  if (!confirm('确定要重置奖池吗？\n\n九宫格将恢复未开启状态。\n（口令次数不受影响）')) return;
 
   collectFormData();
   currentData.opened = false;
   currentData.currentGrid = [null, null, null, null, null, null, null, null, null];
-  currentData.refreshCount = 0;
 
   const ok = await saveData(currentData);
   if (ok) {
