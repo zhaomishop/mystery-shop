@@ -2,7 +2,7 @@
   "title": "神秘商店",
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
   "refreshCount": 5,
-  "probabilitySlope": 4.5,
+  "probabilitySlope": 4.8,
   "refreshCodes": [
     {
       "code": "123",
