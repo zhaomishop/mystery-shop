@@ -1,70 +1,70 @@
 {
   "title": "神秘商店",
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
-  "refreshCount": 3,
+  "refreshCount": 4,
   "probabilitySlope": 4.5,
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 7,
+      "uses": 6,
       "maxUses": 10
     }
   ],
   "opened": true,
   "currentGrid": [
     {
-      "id": 16,
+      "id": 12,
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
     },
     {
-      "id": 14,
-      "icon": "🎁",
-      "name": "新奖品",
-      "quality": 1
-    },
-    {
-      "id": 41,
-      "icon": "🔮",
-      "name": "新奖品",
-      "quality": 7
-    },
-    {
-      "id": 44,
-      "icon": "👑",
-      "name": "新奖品",
-      "quality": 8
-    },
-    {
-      "id": 31,
-      "icon": "💎",
-      "name": "新奖品",
-      "quality": 4
-    },
-    {
-      "id": 35,
+      "id": 36,
       "icon": "💝",
       "name": "新奖品",
       "quality": 6
     },
     {
-      "id": 21,
+      "id": 11,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 8,
+      "icon": "👑",
+      "name": "传说奖品",
+      "quality": 8
+    },
+    {
+      "id": 48,
+      "icon": "🌈",
+      "name": "新奖品",
+      "quality": 9
+    },
+    {
+      "id": 55,
+      "icon": "🍀",
+      "name": "新奖品",
+      "quality": 3
+    },
+    {
+      "id": 56,
+      "icon": "💎",
+      "name": "新奖品",
+      "quality": 4
+    },
+    {
+      "id": 56,
+      "icon": "💎",
+      "name": "新奖品",
+      "quality": 4
+    },
+    {
+      "id": 18,
       "icon": "🎀",
       "name": "新奖品",
       "quality": 2
-    },
-    {
-      "id": 42,
-      "icon": "🎁",
-      "name": "新奖品",
-      "quality": 1
-    },
-    {
-      "id": 15,
-      "icon": "🎁",
-      "name": "新奖品",
-      "quality": 1
     }
   ],
   "prizes": [
