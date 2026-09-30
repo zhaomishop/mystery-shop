@@ -5,18 +5,85 @@
   "refreshCodes": [
     {
       "code": "123",
-      "uses": 10,
-      "maxUses": 10
+      "uses": 9,
+      "maxUses": 10,
+      "grid": [
+        {
+          "id": 20,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 54,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 22,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 13,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 11,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 54,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        },
+        {
+          "id": 12,
+          "icon": "🎁",
+          "name": "新奖品",
+          "quality": 1
+        },
+        {
+          "id": 38,
+          "icon": "💎",
+          "name": "新奖品",
+          "quality": 4
+        },
+        {
+          "id": 22,
+          "icon": "🎀",
+          "name": "新奖品",
+          "quality": 2
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1790753926846,
+      "opened": true
     },
     {
       "code": "555",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "666",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -476,18 +543,5 @@
       "name": "新奖品",
       "quality": 7
     }
-  ],
-  "refreshCount": 0,
-  "opened": false,
-  "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
   ]
 }
