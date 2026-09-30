@@ -4,86 +4,19 @@
   "probabilitySlope": 1,
   "refreshCodes": [
     {
-      "code": "123",
+      "code": "测试123",
       "uses": 7,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 4,
-          "icon": "💎",
-          "name": "精美奖品",
-          "quality": 4
-        },
-        {
-          "id": 3,
-          "icon": "🍀",
-          "name": "幸运奖品",
-          "quality": 3
-        },
-        {
-          "id": 4,
-          "icon": "💎",
-          "name": "精美奖品",
-          "quality": 4
-        },
-        {
-          "id": 33,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 34,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 28,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        },
-        {
-          "id": 34,
-          "icon": "🌟",
-          "name": "新奖品",
-          "quality": 5
-        },
-        {
-          "id": 53,
-          "icon": "🎁",
-          "name": "新奖品",
-          "quality": 1
-        },
-        {
-          "id": 24,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        }
-      ],
-      "refreshCount": 3,
-      "refreshTime": 1790753937309,
-      "opened": true
+      "maxUses": 7
     },
     {
       "code": "555",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "666",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     }
   ],
   "prizes": [
@@ -543,5 +476,6 @@
       "name": "新奖品",
       "quality": 7
     }
-  ]
+  ],
+  "refreshCount": 0
 }
