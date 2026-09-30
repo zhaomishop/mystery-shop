@@ -5,8 +5,8 @@
   "refreshCodes": [
     {
       "code": "测试123",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     },
     {
       "code": "零食555",
