@@ -6,27 +6,102 @@
     {
       "code": "新娘456",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "沐崽789",
-      "uses": 10,
-      "maxUses": 10
+      "uses": 9,
+      "maxUses": 10,
+      "grid": [
+        {
+          "id": 24,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 11,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 1,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 18,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        },
+        {
+          "id": 22,
+          "icon": "🍀",
+          "name": "粉钻*10（10000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 24,
+          "icon": "🍀",
+          "name": "粉钻*10（2888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 13,
+          "icon": "🎁",
+          "name": "粉钻*2（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 74,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 2,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1790778247371,
+      "opened": true
     },
     {
       "code": "安婷114",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "汜汜777",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -498,6 +573,5 @@
       "name": "新奖品",
       "quality": 2
     }
-  ],
-  "refreshCount": 0
+  ]
 }
