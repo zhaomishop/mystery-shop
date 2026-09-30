@@ -10,62 +10,17 @@
       "maxUses": 10
     }
   ],
-  "opened": true,
+  "opened": false,
   "currentGrid": [
-    {
-      "id": 74,
-      "icon": "👑",
-      "name": "新奖品",
-      "quality": 8
-    },
-    {
-      "id": 29,
-      "icon": "💎",
-      "name": "新奖品",
-      "quality": 4
-    },
-    {
-      "id": 70,
-      "icon": "🌈",
-      "name": "新奖品",
-      "quality": 9
-    },
-    {
-      "id": 70,
-      "icon": "🌈",
-      "name": "新奖品",
-      "quality": 9
-    },
-    {
-      "id": 75,
-      "icon": "🔮",
-      "name": "新奖品",
-      "quality": 7
-    },
-    {
-      "id": 39,
-      "icon": "🔮",
-      "name": "新奖品",
-      "quality": 7
-    },
-    {
-      "id": 50,
-      "icon": "🌈",
-      "name": "新奖品",
-      "quality": 9
-    },
-    {
-      "id": 45,
-      "icon": "👑",
-      "name": "新奖品",
-      "quality": 8
-    },
-    {
-      "id": 9,
-      "icon": "🌈",
-      "name": "神话奖品",
-      "quality": 9
-    }
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
   ],
   "prizes": [
     {
