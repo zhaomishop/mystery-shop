@@ -93,6 +93,7 @@ function render() {
   document.getElementById('titleInput').value = currentData.title || '';
   document.getElementById('subtitleInput').value = currentData.subtitle || '';
   document.getElementById('countDisplay').textContent = currentData.refreshCount || 0;
+  document.getElementById('slopeInput').value = currentData.probabilitySlope != null ? currentData.probabilitySlope : 2.5;
 
   renderPrizeList();
   renderCodeList();
@@ -228,6 +229,10 @@ function collectFormData() {
   currentData.title = document.getElementById('titleInput').value.trim() || '神秘商店';
   currentData.subtitle = document.getElementById('subtitleInput').value.trim();
 
+  // 概率斜率
+  const slopeVal = parseFloat(document.getElementById('slopeInput').value);
+  currentData.probabilitySlope = isNaN(slopeVal) ? 2.5 : Math.max(0, Math.min(10, slopeVal));
+
   // 收集奖品列表（图标由品质自动决定）
   const items = document.querySelectorAll('.prize-item');
   currentData.prizes = Array.from(items).map((item, idx) => {
@@ -278,7 +283,7 @@ document.getElementById('btnAddPrize').addEventListener('click', () => {
 });
 
 // 标题/副标题失焦自动保存
-['titleInput', 'subtitleInput'].forEach(id => {
+['titleInput', 'subtitleInput', 'slopeInput'].forEach(id => {
   document.getElementById(id).addEventListener('blur', autoSave);
 });
 
