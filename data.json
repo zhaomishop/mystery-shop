@@ -2,13 +2,7 @@
   "title": "神秘商店",
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
   "refreshCount": 1,
-  "refreshCodes": [
-    {
-      "code": "123",
-      "uses": 0,
-      "maxUses": 10
-    }
-  ],
+  "refreshCodes": [],
   "opened": true,
   "currentGrid": [
     {
