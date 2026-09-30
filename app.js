@@ -12,6 +12,7 @@ const CONFIG = {
 const COVER_ICON = '🎁';
 let currentData = null;
 let fileSha = null;
+let currentCode = null; // 当前用户使用的口令
 
 // 数据迁移：旧格式 refreshCode -> 新格式 refreshCodes 数组
 function migrateData(data) {
@@ -24,13 +25,42 @@ function migrateData(data) {
     }
     delete data.refreshCode;
   }
-  // 确保每个口令都有 uses 和 maxUses
+  // 确保每个口令都有 uses 和 maxUses（保留已有字段，避免丢失 per-code 数据）
   data.refreshCodes = (data.refreshCodes || []).map(c => ({
+    ...c,
     code: c.code || '',
     uses: c.uses != null ? c.uses : (c.maxUses || 0),
     maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
   }));
-  if (data.refreshCount == null) data.refreshCount = 0;
+  // 迁移：将顶层奖池数据移入每个口令条目
+  // 若存在旧的顶层 currentGrid/refreshCount/refreshTime/opened，则移入第一个 refreshCode 条目
+  if (data.refreshCodes.length > 0) {
+    const hasTopGrid = data.currentGrid != null
+      || data.refreshCount != null
+      || data.refreshTime != null
+      || data.opened != null;
+    if (hasTopGrid) {
+      const first = data.refreshCodes[0];
+      first.grid = data.currentGrid || [];
+      first.refreshCount = data.refreshCount || 0;
+      first.refreshTime = data.refreshTime || 0;
+      first.opened = !!data.opened;
+      delete data.currentGrid;
+      delete data.refreshCount;
+      delete data.refreshTime;
+      delete data.opened;
+    }
+  }
+  // 确保每个口令条目都有 grid/refreshCount/refreshTime/opened 字段及默认值
+  data.refreshCodes = data.refreshCodes.map(c => ({
+    code: c.code || '',
+    uses: c.uses != null ? c.uses : (c.maxUses || 0),
+    maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0),
+    grid: Array.isArray(c.grid) ? c.grid : [],
+    refreshCount: c.refreshCount != null ? c.refreshCount : 0,
+    refreshTime: c.refreshTime != null ? c.refreshTime : 0,
+    opened: !!c.opened
+  }));
   // 中心品质默认值：1~10，正态分布中心
   if (data.probabilitySlope == null) data.probabilitySlope = 3;
 }
@@ -142,8 +172,9 @@ let countdownTimer = null;
 
 function startCountdown() {
   if (countdownTimer) clearInterval(countdownTimer);
-  const baseTime = (currentData && currentData.refreshTime) ? currentData.refreshTime : Date.now();
-  const endTime = baseTime + 30 * 60 * 1000; // 30分钟后
+  const entry = currentData.refreshCodes.find(c => c.code === currentCode);
+  const baseTime = (entry && entry.refreshTime) ? entry.refreshTime : Date.now();
+  const endTime = baseTime + 30 * 60 * 1000;
   updateCountdown(endTime);
   countdownTimer = setInterval(() => updateCountdown(endTime), 1000);
 }
@@ -168,13 +199,15 @@ function render() {
 
   document.getElementById('pageTitle').textContent = currentData.title || '神秘商店';
   document.getElementById('pageSubtitle').textContent = currentData.subtitle || '';
-  document.getElementById('refreshCount').textContent = currentData.refreshCount || 0;
+
+  const entry = (currentData.refreshCodes || []).find(c => c.code === currentCode);
+  document.getElementById('refreshCount').textContent = (entry && entry.refreshCount) ? entry.refreshCount : 0;
 
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
 
-  const opened = currentData.opened;
-  const currentGrid = currentData.currentGrid || [];
+  const opened = entry ? entry.opened : false;
+  const currentGrid = (entry && entry.grid) ? entry.grid : [];
 
   for (let i = 0; i < 9; i++) {
     const cell = document.createElement('div');
@@ -214,10 +247,12 @@ function render() {
 // ========== 口令输入弹窗 ==========
 let codeModalResolver = null;
 
-function showCodeModal() {
+function showCodeModal(title) {
   return new Promise((resolve) => {
     const modal = document.getElementById('codeModal');
     const input = document.getElementById('codeModalInput');
+    const titleEl = document.getElementById('codeModalTitle');
+    if (titleEl && title) titleEl.textContent = title;
     codeModalResolver = resolve;
     input.value = '';
     modal.classList.add('show');
@@ -239,40 +274,29 @@ function closeCodeModal(value) {
 async function handleRefresh() {
   if (!currentData) return;
 
-  const codes = currentData.refreshCodes || [];
-  if (codes.length === 0) {
-    showToast('暂无可用口令');
+  if (!currentCode) {
+    showToast('请先输入口令');
     return;
   }
 
-  const code = await showCodeModal();
-  if (code === null) return;
-  const trimmed = code.trim();
-  if (!trimmed) return;
-
-  // 查找匹配的口令（剩余次数 > 0）
-  const entry = codes.find(c => c.code === trimmed && (c.uses || 0) > 0);
+  const codes = currentData.refreshCodes || [];
+  // 查找当前口令且剩余次数 > 0
+  const entry = codes.find(c => c.code === currentCode && (c.uses || 0) > 0);
   if (!entry) {
-    // 检查是否口令存在但次数用尽
-    const exists = codes.find(c => c.code === trimmed);
-    if (exists) {
-      showToast('该口令次数已用尽！');
-    } else {
-      showToast('口令错误！');
-    }
+    showToast('该口令次数已用尽！');
     return;
   }
 
   // 扣减该口令的可用次数
   entry.uses = (entry.uses || 0) - 1;
 
-  // 增加全局刷新次数（影响概率）
-  currentData.refreshCount = (currentData.refreshCount || 0) + 1;
-  currentData.refreshTime = Date.now(); // 记录刷新时间，用于倒计时
+  // 增加该口令的刷新次数（影响概率）
+  entry.refreshCount = (entry.refreshCount || 0) + 1;
+  entry.refreshTime = Date.now(); // 记录刷新时间，用于倒计时
 
   // 生成新的九宫格奖品
-  currentData.currentGrid = generateGrid(currentData.prizes, currentData.refreshCount);
-  currentData.opened = true;
+  entry.grid = generateGrid(currentData.prizes, entry.refreshCount);
+  entry.opened = true;
 
   const ok = await saveData(currentData);
   if (ok) {
@@ -318,21 +342,41 @@ function showToast(msg) {
 // ========== 初始化 ==========
 async function init() {
   const data = await fetchData();
-  if (data) {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('content').style.display = 'block';
-    render();
-    // 如果已刷新过且在30分钟内，恢复倒计时
-    if (data.opened && data.refreshTime) {
-      const endTime = data.refreshTime + 30 * 60 * 1000;
-      if (endTime > Date.now()) {
-        if (countdownTimer) clearInterval(countdownTimer);
-        updateCountdown(endTime);
-        countdownTimer = setInterval(() => updateCountdown(endTime), 1000);
-      }
-    }
-  } else {
+  if (!data) {
     document.getElementById('loading').textContent = '数据加载失败，请刷新重试';
+    return;
+  }
+
+  // 弹出口令输入弹窗
+  const code = await showCodeModal('请输入口令进入');
+  if (code === null) {
+    document.getElementById('loading').textContent = '请输入口令进入';
+    return;
+  }
+
+  const trimmed = (code || '').trim();
+  const entry = (data.refreshCodes || []).find(c => c.code === trimmed);
+
+  if (!entry) {
+    showToast('口令错误！');
+    document.getElementById('loading').textContent = '口令错误，请刷新重试';
+    return;
+  }
+
+  // 口令存在（无论剩余次数），进入主界面
+  currentCode = trimmed;
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+  render();
+
+  // 如果该口令已刷新过且在30分钟内，恢复倒计时
+  if (entry.opened && entry.refreshTime) {
+    const endTime = entry.refreshTime + 30 * 60 * 1000;
+    if (endTime > Date.now()) {
+      if (countdownTimer) clearInterval(countdownTimer);
+      updateCountdown(endTime);
+      countdownTimer = setInterval(() => updateCountdown(endTime), 1000);
+    }
   }
 }
 
