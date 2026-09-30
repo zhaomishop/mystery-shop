@@ -3,7 +3,13 @@
   "subtitle": "欢迎来到神秘商店，快来抽取你的幸运奖品吧！",
   "refreshCount": 0,
   "probabilitySlope": 4.5,
-  "refreshCodes": [],
+  "refreshCodes": [
+    {
+      "code": "123",
+      "uses": 10,
+      "maxUses": 10
+    }
+  ],
   "opened": false,
   "currentGrid": [
     null,
