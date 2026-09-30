@@ -23,26 +23,20 @@
     },
     {
       "code": "月光666",
-      "uses": 6,
+      "uses": 5,
       "maxUses": 10,
       "grid": [
         {
-          "id": 76,
-          "icon": "🔮",
-          "name": "新奖品",
-          "quality": 7
-        },
-        {
-          "id": 23,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
-        },
-        {
-          "id": 56,
+          "id": 4,
           "icon": "💎",
-          "name": "新奖品",
+          "name": "精美奖品",
           "quality": 4
+        },
+        {
+          "id": 37,
+          "icon": "💝",
+          "name": "新奖品",
+          "quality": 6
         },
         {
           "id": 32,
@@ -51,38 +45,44 @@
           "quality": 5
         },
         {
-          "id": 5,
-          "icon": "🌟",
-          "name": "稀有奖品",
-          "quality": 5
-        },
-        {
-          "id": 30,
-          "icon": "💎",
-          "name": "新奖品",
-          "quality": 4
-        },
-        {
-          "id": 5,
-          "icon": "🌟",
-          "name": "稀有奖品",
-          "quality": 5
-        },
-        {
-          "id": 35,
-          "icon": "💝",
-          "name": "新奖品",
-          "quality": 6
-        },
-        {
           "id": 7,
           "icon": "🔮",
           "name": "史诗奖品",
           "quality": 7
+        },
+        {
+          "id": 27,
+          "icon": "🍀",
+          "name": "新奖品",
+          "quality": 3
+        },
+        {
+          "id": 8,
+          "icon": "👑",
+          "name": "传说奖品",
+          "quality": 8
+        },
+        {
+          "id": 67,
+          "icon": "🌈",
+          "name": "新奖品",
+          "quality": 9
+        },
+        {
+          "id": 74,
+          "icon": "👑",
+          "name": "新奖品",
+          "quality": 8
+        },
+        {
+          "id": 31,
+          "icon": "💎",
+          "name": "新奖品",
+          "quality": 4
         }
       ],
-      "refreshCount": 4,
-      "refreshTime": 1790754432915,
+      "refreshCount": 5,
+      "refreshTime": 1790754468125,
       "opened": true
     }
   ],
