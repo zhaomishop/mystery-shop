@@ -93,7 +93,7 @@ function render() {
   document.getElementById('titleInput').value = currentData.title || '';
   document.getElementById('subtitleInput').value = currentData.subtitle || '';
   document.getElementById('countDisplay').textContent = currentData.refreshCount || 0;
-  document.getElementById('slopeInput').value = currentData.probabilitySlope != null ? currentData.probabilitySlope : 2.5;
+  document.getElementById('slopeInput').value = currentData.probabilitySlope != null ? Math.round(currentData.probabilitySlope) : 3;
 
   renderPrizeList();
   renderCodeList();
@@ -232,9 +232,9 @@ function collectFormData() {
   currentData.title = document.getElementById('titleInput').value.trim() || '神秘商店';
   currentData.subtitle = document.getElementById('subtitleInput').value.trim();
 
-  // 概率斜率
-  const slopeVal = parseFloat(document.getElementById('slopeInput').value);
-  currentData.probabilitySlope = isNaN(slopeVal) ? 2.5 : Math.max(0, Math.min(10, slopeVal));
+  // 中心品质：1~10 整数
+  const slopeVal = parseInt(document.getElementById('slopeInput').value);
+  currentData.probabilitySlope = isNaN(slopeVal) ? 3 : Math.max(1, Math.min(10, slopeVal));
 
   // 收集奖品列表（图标由品质自动决定）
   const items = document.querySelectorAll('.prize-item');
