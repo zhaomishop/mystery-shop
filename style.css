@@ -44,53 +44,90 @@ body::before {
   padding: 30px 20px;
 }
 
-/* 梦幻唯美标题效果 */
+/* 红金哥特风标题效果 */
 .shiny-title {
   position: relative;
   text-align: center;
-  font-family: 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'Cinzel', 'ZCOOL XiaoWei', 'Songti SC', 'SimSun', 'STSong', 'PingFang SC', serif;
   font-size: 2.8em;
-  font-weight: 400;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fbc2eb 20%, #a18cd1 45%, #a6c1ee 70%, #ff9a9e 100%);
-  background-size: 300% 300%;
+  font-weight: 700;
+  background: linear-gradient(180deg,
+    #fff4c2 0%,
+    #ffd700 25%,
+    #f5a623 50%,
+    #c41e3a 75%,
+    #8b0000 100%);
+  background-size: 100% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: dreamShine 5s ease infinite;
-  letter-spacing: 6px;
+  animation: goldFlow 4s ease-in-out infinite, titleFlash 6s ease-in-out infinite;
+  letter-spacing: 8px;
   margin-bottom: 10px;
-  text-shadow:
-    0 0 18px rgba(255, 154, 158, 0.7),
-    0 0 40px rgba(161, 140, 209, 0.5),
-    0 0 70px rgba(166, 193, 238, 0.35);
-  filter: drop-shadow(0 0 10px rgba(251, 194, 235, 0.6));
+  padding: 12px 24px;
+  /* 玻璃质感：用 inset 大阴影模拟半透明底色，避免与文字渐变 background 冲突 */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 1000px rgba(139, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 4px 20px rgba(139, 0, 0, 0.35),
+    0 0 24px rgba(255, 180, 0, 0.25);
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* 标题后方虚化光晕 */
+/* 标题后方红金光晕 */
 .shiny-title::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 140%;
-  height: 260%;
+  width: 130%;
+  height: 240%;
   background: radial-gradient(ellipse at center,
-    rgba(255, 154, 158, 0.32) 0%,
-    rgba(251, 194, 235, 0.22) 30%,
-    rgba(161, 140, 209, 0.18) 55%,
-    transparent 75%);
-  filter: blur(24px);
+    rgba(255, 180, 0, 0.35) 0%,
+    rgba(196, 30, 58, 0.22) 35%,
+    rgba(139, 0, 0, 0.12) 60%,
+    transparent 78%);
+  filter: blur(20px);
   z-index: -1;
-  animation: haloPulse 4s ease-in-out infinite alternate;
+  animation: haloPulseRed 4s ease-in-out infinite alternate;
   pointer-events: none;
+}
+
+/* 一闪而过的高光扫过 */
+.shiny-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 45%,
+    rgba(255, 215, 0, 0.8) 50%,
+    rgba(255, 255, 255, 0.55) 55%,
+    transparent 100%);
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: sweepFlash 6s ease-in-out infinite;
 }
 
 .shiny-subtitle {
   text-align: center;
-  font-family: 'ZCOOL KuaiLe', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: 'ZCOOL XiaoWei', 'Cinzel', 'Songti SC', 'SimSun', 'STSong', 'PingFang SC', serif;
   font-size: 1.05em;
-  background: linear-gradient(90deg, #ffd1dc, #e0c3fc, #b8d4ff, #ffd1dc);
+  background: linear-gradient(90deg, #ffd700, #f5a623, #c41e3a, #f5a623, #ffd700);
   background-size: 300% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -99,14 +136,14 @@ body::before {
   margin-bottom: 30px;
   padding: 0 10px;
   line-height: 1.6;
-  letter-spacing: 2px;
-  text-shadow: 0 0 12px rgba(224, 195, 252, 0.5);
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 180, 0, 0.4);
 }
 
-@keyframes dreamShine {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes goldFlow {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 @keyframes shineSub {
@@ -114,9 +151,30 @@ body::before {
   100% { background-position: 300% center; }
 }
 
-@keyframes haloPulse {
-  0%   { opacity: 0.55; transform: translate(-50%, -50%) scale(0.95); }
-  100% { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.08); }
+@keyframes haloPulseRed {
+  0%   { opacity: 0.5;  transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* 一闪而过的发光：每6秒短暂爆发强光 */
+@keyframes titleFlash {
+  0%, 88%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 180, 0, 0.5));
+  }
+  90% {
+    filter: drop-shadow(0 0 28px rgba(255, 220, 100, 1))
+            drop-shadow(0 0 50px rgba(255, 180, 0, 0.9));
+  }
+  92% {
+    filter: drop-shadow(0 0 18px rgba(255, 200, 80, 0.8));
+  }
+}
+
+@keyframes sweepFlash {
+  0%, 70% { left: -150%; opacity: 0; }
+  75%      { opacity: 1; }
+  85%      { left: 150%; opacity: 0; }
+  100%     { left: 150%; opacity: 0; }
 }
 
 /* 九宫格 */
