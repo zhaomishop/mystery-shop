@@ -23,26 +23,20 @@
     },
     {
       "code": "月光666",
-      "uses": 9,
+      "uses": 8,
       "maxUses": 10,
       "grid": [
         {
-          "id": 25,
+          "id": 55,
           "icon": "🍀",
           "name": "新奖品",
           "quality": 3
         },
         {
-          "id": 53,
+          "id": 13,
           "icon": "🎁",
           "name": "新奖品",
           "quality": 1
-        },
-        {
-          "id": 26,
-          "icon": "🍀",
-          "name": "新奖品",
-          "quality": 3
         },
         {
           "id": 23,
@@ -51,10 +45,10 @@
           "quality": 3
         },
         {
-          "id": 29,
-          "icon": "💎",
+          "id": 21,
+          "icon": "🎀",
           "name": "新奖品",
-          "quality": 4
+          "quality": 2
         },
         {
           "id": 17,
@@ -63,26 +57,32 @@
           "quality": 2
         },
         {
-          "id": 22,
-          "icon": "🎀",
+          "id": 53,
+          "icon": "🎁",
           "name": "新奖品",
-          "quality": 2
+          "quality": 1
         },
         {
-          "id": 31,
+          "id": 24,
+          "icon": "🍀",
+          "name": "新奖品",
+          "quality": 3
+        },
+        {
+          "id": 28,
           "icon": "💎",
           "name": "新奖品",
           "quality": 4
         },
         {
-          "id": 14,
+          "id": 13,
           "icon": "🎁",
           "name": "新奖品",
           "quality": 1
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1790773798122,
+      "refreshCount": 2,
+      "refreshTime": 1790773800946,
       "opened": true
     }
   ],
