@@ -17,6 +17,11 @@
       "code": "秋水123",
       "uses": 10,
       "maxUses": 10
+    },
+    {
+      "code": "安婷123",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "prizes": [
