@@ -4,21 +4,6 @@
   "probabilitySlope": 1,
   "refreshCodes": [
     {
-      "code": "新娘456",
-      "uses": 0,
-      "maxUses": 0
-    },
-    {
-      "code": "小迁123",
-      "uses": 10,
-      "maxUses": 10
-    },
-    {
-      "code": "沐崽789",
-      "uses": 9,
-      "maxUses": 9
-    },
-    {
       "code": "安婷114",
       "uses": 10,
       "maxUses": 10
@@ -309,7 +294,7 @@
     {
       "id": 47,
       "icon": "🌈",
-      "name": "群冠卡7天（48888灵石）",
+      "name": "群冠卡7天（100000灵石）",
       "quality": 9
     },
     {
