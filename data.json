@@ -2,18 +2,7 @@
   "title": "清月典阁",
   "subtitle": "月光的神秘商店",
   "probabilitySlope": 1,
-  "refreshCodes": [
-    {
-      "code": "安婷114",
-      "uses": 10,
-      "maxUses": 10
-    },
-    {
-      "code": "汜汜777",
-      "uses": 10,
-      "maxUses": 10
-    }
-  ],
+  "refreshCodes": [],
   "prizes": [
     {
       "id": 1,
