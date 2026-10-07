@@ -1,98 +1,27 @@
 {
   "title": "清月典阁",
   "subtitle": "月光的神秘商店",
-  "probabilitySlope": 1,
+  "probabilitySlope": 3,
   "refreshCodes": [
     {
       "code": "新娘123",
       "uses": 0,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 35,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 38,
-          "icon": "🔮",
-          "name": "基础自由马7天（10000灵石）",
-          "quality": 7
-        },
-        {
-          "id": 32,
-          "icon": "💝",
-          "name": "四字前缀卡7天（6000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 36,
-          "icon": "🔮",
-          "name": "六字前缀卡30天（36789灵石）",
-          "quality": 7
-        },
-        {
-          "id": 61,
-          "icon": "🌈",
-          "name": "bot冠名7日卡（88888灵石）",
-          "quality": 9
-        },
-        {
-          "id": 30,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 8,
-          "icon": "👑",
-          "name": "三字冠命卡7天（5666灵石）",
-          "quality": 8
-        },
-        {
-          "id": 41,
-          "icon": "👑",
-          "name": "月光宝盒*10（5555灵石）",
-          "quality": 8
-        },
-        {
-          "id": 4,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        }
-      ],
-      "refreshCount": 10,
-      "refreshTime": 1791387521180,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "秋水123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "安婷123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     }
   ],
   "prizes": [
@@ -600,5 +529,6 @@
       "name": "呆毛*10（3000灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
