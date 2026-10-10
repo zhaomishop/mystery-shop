@@ -549,9 +549,9 @@
     },
     {
       "id": 88,
-      "icon": "🎁",
+      "icon": "👑",
       "name": "新奖品",
-      "quality": 1
+      "quality": 8
     },
     {
       "id": 89,
@@ -561,9 +561,9 @@
     },
     {
       "id": 90,
-      "icon": "🎁",
+      "icon": "👑",
       "name": "新奖品",
-      "quality": 1
+      "quality": 8
     }
   ],
   "refreshCount": 0
