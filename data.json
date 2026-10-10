@@ -546,6 +546,18 @@
       "icon": "🔮",
       "name": "好友位*1（3000灵石）",
       "quality": 7
+    },
+    {
+      "id": 88,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 89,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0
