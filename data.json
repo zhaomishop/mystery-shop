@@ -5,8 +5,8 @@
   "refreshCodes": [
     {
       "code": "月光123",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "prizes": [
