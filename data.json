@@ -5,33 +5,112 @@
   "refreshCodes": [
     {
       "code": "新娘123",
-      "uses": 10,
-      "maxUses": 10
+      "uses": 9,
+      "maxUses": 10,
+      "grid": [
+        {
+          "id": 25,
+          "icon": "💎",
+          "name": "公演双倍卡*5（3000灵石）",
+          "quality": 4
+        },
+        {
+          "id": 3,
+          "icon": "🍀",
+          "name": "粉钻*10（9999灵石）",
+          "quality": 3
+        },
+        {
+          "id": 79,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 26,
+          "icon": "💎",
+          "name": "公演双倍卡*5（3000灵石）",
+          "quality": 4
+        },
+        {
+          "id": 75,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 50,
+          "icon": "🍀",
+          "name": "粉钻*10（10000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 22,
+          "icon": "🍀",
+          "name": "粉钻*10（9999灵石）",
+          "quality": 3
+        },
+        {
+          "id": 50,
+          "icon": "🍀",
+          "name": "粉钻*10（10000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 38,
+          "icon": "🔮",
+          "name": "基础自由马7天（10000灵石）",
+          "quality": 7
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1791617461569,
+      "opened": true
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "秋水123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "安婷123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "汜汜123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "兔叽123",
       "uses": 10,
-      "maxUses": 10
+      "maxUses": 10,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -587,18 +666,5 @@
       "name": "高级自由马1天（5000灵石）",
       "quality": 8
     }
-  ],
-  "refreshCount": 0,
-  "opened": false,
-  "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
   ]
 }
