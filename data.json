@@ -534,6 +534,18 @@
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
+    },
+    {
+      "id": 86,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 87,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0
