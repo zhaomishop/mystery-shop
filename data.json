@@ -30,8 +30,8 @@
     },
     {
       "code": "兔叽123",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "prizes": [
