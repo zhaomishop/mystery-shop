@@ -6,157 +6,27 @@
     {
       "code": "新娘123",
       "uses": 9,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 13,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 1,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 26,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 24,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        },
-        {
-          "id": 79,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 74,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 81,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 30,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（10000灵石）",
-          "quality": 3
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1791616987389,
-      "opened": true
+      "maxUses": 9
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "秋水123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "安婷123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "汜汜123",
       "uses": 8,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 70,
-          "icon": "🔮",
-          "name": "灵石1000（免费）",
-          "quality": 7
-        },
-        {
-          "id": 20,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        },
-        {
-          "id": 18,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 13,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 25,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 11,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 75,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 19,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（10000灵石）",
-          "quality": 3
-        }
-      ],
-      "refreshCount": 2,
-      "refreshTime": 1791617036384,
-      "opened": true
+      "maxUses": 8
     }
   ],
   "prizes": [
@@ -712,5 +582,6 @@
       "name": "高级自由马1天（5000灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
