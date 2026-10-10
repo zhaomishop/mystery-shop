@@ -25,13 +25,13 @@
     },
     {
       "code": "汜汜123",
-      "uses": 0,
-      "maxUses": 0
+      "uses": 10,
+      "maxUses": 10
     },
     {
       "code": "兔叽123",
-      "uses": 7,
-      "maxUses": 7
+      "uses": 10,
+      "maxUses": 10
     }
   ],
   "prizes": [
