@@ -1,226 +1,37 @@
 {
   "title": "清月典阁",
   "subtitle": "月光的神秘商店",
-  "probabilitySlope": 1,
+  "probabilitySlope": 3,
   "refreshCodes": [
     {
       "code": "新娘123",
       "uses": 0,
-      "maxUses": 9,
-      "grid": [
-        {
-          "id": 30,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 30,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 5,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 8,
-          "icon": "👑",
-          "name": "三字冠命卡7天（5666灵石）",
-          "quality": 8
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "二字前缀 30天（13888灵石）",
-          "quality": 7
-        },
-        {
-          "id": 33,
-          "icon": "💝",
-          "name": "四字前缀卡7天（6000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 30,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 33,
-          "icon": "💝",
-          "name": "四字前缀卡7天（6000灵石）",
-          "quality": 6
-        },
-        {
-          "id": 42,
-          "icon": "👑",
-          "name": "月光宝盒*10（6666灵石）",
-          "quality": 8
-        }
-      ],
-      "refreshCount": 9,
-      "refreshTime": 1791617273780,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "小迁123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "秋水123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "安婷123",
       "uses": 10,
-      "maxUses": 10,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 10
     },
     {
       "code": "汜汜123",
       "uses": 0,
-      "maxUses": 8,
-      "grid": [
-        {
-          "id": 68,
-          "icon": "👑",
-          "name": "呆毛*10（3000灵石）",
-          "quality": 8
-        },
-        {
-          "id": 4,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 87,
-          "icon": "🔮",
-          "name": "好友位*1（4888灵石）",
-          "quality": 7
-        },
-        {
-          "id": 29,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 7,
-          "icon": "🔮",
-          "name": "二字前缀 30天（13888灵石）",
-          "quality": 7
-        },
-        {
-          "id": 76,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 25,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 68,
-          "icon": "👑",
-          "name": "呆毛*10（3000灵石）",
-          "quality": 8
-        },
-        {
-          "id": 16,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        }
-      ],
-      "refreshCount": 8,
-      "refreshTime": 1791617211807,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "兔叽123",
       "uses": 7,
-      "maxUses": 10,
-      "grid": [
-        {
-          "id": 20,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        },
-        {
-          "id": 78,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 22,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        },
-        {
-          "id": 22,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        },
-        {
-          "id": 77,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 5,
-          "icon": "🌟",
-          "name": "月光宝盒*2（1666灵石）",
-          "quality": 5
-        },
-        {
-          "id": 39,
-          "icon": "🎁",
-          "name": "灵石1000（500灵石）",
-          "quality": 1
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（10000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 23,
-          "icon": "🍀",
-          "name": "粉钻*10（9999灵石）",
-          "quality": 3
-        }
-      ],
-      "refreshCount": 3,
-      "refreshTime": 1791617333115,
-      "opened": true
+      "maxUses": 7
     }
   ],
   "prizes": [
@@ -776,5 +587,6 @@
       "name": "高级自由马1天（5000灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
