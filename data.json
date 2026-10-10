@@ -528,6 +528,12 @@
       "icon": "👑",
       "name": "呆毛*10（3000灵石）",
       "quality": 8
+    },
+    {
+      "id": 85,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0
