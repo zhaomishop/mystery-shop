@@ -17,6 +17,11 @@
       "code": "熱爱123",
       "uses": 10,
       "maxUses": 10
+    },
+    {
+      "code": "星野123",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "prizes": [
