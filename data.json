@@ -5,8 +5,8 @@
   "refreshCodes": [
     {
       "code": "新娘123",
-      "uses": 6,
-      "maxUses": 6
+      "uses": 10,
+      "maxUses": 10
     },
     {
       "code": "花痴123",
