@@ -582,6 +582,12 @@
       "icon": "🍀",
       "name": "灵石2000",
       "quality": 3
+    },
+    {
+      "id": 94,
+      "icon": "🎁",
+      "name": "奖品94",
+      "quality": 1
     }
   ],
   "refreshCount": 0
