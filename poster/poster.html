@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>神秘商店海报</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cinzel:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1920px;
+    height: 4480px;
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+    background: #eef6f4;
+    overflow: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .poster {
+    width: 1920px;
+    height: 4480px;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% 12%, rgba(180, 225, 220, 0.7) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 55%, rgba(195, 220, 230, 0.55) 0%, transparent 50%),
+      radial-gradient(ellipse at 15% 85%, rgba(200, 228, 220, 0.5) 0%, transparent 50%),
+      linear-gradient(180deg, #f2faf7 0%, #e6f3ef 35%, #eaf5f1 65%, #f0f9f6 100%);
+    color: #1a3a3a;
+  }
+
+  .bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.55;
+  }
+  .bg-glow.g1 { width: 950px; height: 950px; top: -220px; left: 50%; transform: translateX(-50%); background: rgba(150, 210, 200, 0.5); }
+  .bg-glow.g2 { width: 720px; height: 720px; top: 40%; right: -160px; background: rgba(170, 215, 225, 0.4); }
+  .bg-glow.g3 { width: 820px; height: 820px; bottom: 10%; left: -220px; background: rgba(180, 218, 210, 0.4); }
+
+  .border-outer {
+    position: absolute;
+    top: 80px; left: 80px; right: 80px; bottom: 80px;
+    border: 1px solid rgba(150, 110, 50, 0.28);
+  }
+  .border-inner {
+    position: absolute;
+    top: 104px; left: 104px; right: 104px; bottom: 104px;
+    border: 1px solid rgba(150, 110, 50, 0.14);
+  }
+
+  .corner {
+    position: absolute;
+    width: 70px; height: 70px;
+    border-color: #b8893e;
+  }
+  .corner.tl { top: 68px; left: 68px; border-top: 3px solid #b8893e; border-left: 3px solid #b8893e; }
+  .corner.tr { top: 68px; right: 68px; border-top: 3px solid #b8893e; border-right: 3px solid #b8893e; }
+  .corner.bl { bottom: 68px; left: 68px; border-bottom: 3px solid #b8893e; border-left: 3px solid #b8893e; }
+  .corner.br { bottom: 68px; right: 68px; border-bottom: 3px solid #b8893e; border-right: 3px solid #b8893e; }
+
+  /* 背景商店装饰元素 */
+  .deco {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.18;
+    font-size: 80px;
+  }
+  .deco.d1 { top: 340px; left: 100px; font-size: 110px; opacity: 0.14; }
+  .deco.d2 { top: 520px; right: 110px; font-size: 90px; opacity: 0.13; transform: rotate(15deg); }
+  .deco.d3 { top: 1180px; left: 90px; font-size: 75px; opacity: 0.12; transform: rotate(-12deg); }
+  .deco.d4 { top: 1350px; right: 100px; font-size: 85px; opacity: 0.13; }
+  .deco.d5 { top: 2100px; left: 100px; font-size: 100px; opacity: 0.12; transform: rotate(8deg); }
+  .deco.d6 { top: 2300px; right: 110px; font-size: 80px; opacity: 0.13; transform: rotate(-10deg); }
+  .deco.d7 { top: 3000px; left: 90px; font-size: 90px; opacity: 0.12; }
+  .deco.d8 { top: 3200px; right: 100px; font-size: 100px; opacity: 0.13; transform: rotate(12deg); }
+  .deco.d9 { top: 3850px; left: 110px; font-size: 85px; opacity: 0.12; transform: rotate(-8deg); }
+  .deco.d10 { top: 4050px; right: 100px; font-size: 95px; opacity: 0.13; }
+  .sparkle {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    color: #b8893e;
+    opacity: 0.25;
+  }
+  .sparkle.s1 { top: 280px; left: 300px; font-size: 28px; }
+  .sparkle.s2 { top: 400px; right: 320px; font-size: 22px; }
+  .sparkle.s3 { top: 900px; left: 200px; font-size: 24px; }
+  .sparkle.s4 { top: 1500px; right: 220px; font-size: 26px; }
+  .sparkle.s5 { top: 1900px; left: 280px; font-size: 20px; }
+  .sparkle.s6 { top: 2500px; right: 200px; font-size: 28px; }
+  .sparkle.s7 { top: 2900px; left: 240px; font-size: 22px; }
+  .sparkle.s8 { top: 3500px; right: 280px; font-size: 24px; }
+  .sparkle.s9 { top: 3700px; left: 200px; font-size: 26px; }
+  .sparkle.s10 { top: 4200px; right: 240px; font-size: 22px; }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    padding: 90px 280px 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 顶部品牌 */
+  .brand {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    letter-spacing: 12px;
+    color: rgba(140, 100, 42, 0.7);
+    margin-bottom: 28px;
+  }
+  .brand .diamond { color: #b8893e; margin: 0 16px; font-size: 24px; }
+
+  .divider-short {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  .divider-short .line {
+    width: 100px; height: 1px;
+    background: linear-gradient(90deg, transparent, #b8893e, transparent);
+  }
+  .divider-short .dot {
+    width: 10px; height: 10px;
+    background: #b8893e;
+    transform: rotate(45deg);
+  }
+
+  /* 主标题 */
+  .title {
+    text-align: center;
+    font-size: 240px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 16px;
+    margin-bottom: 20px;
+    background: linear-gradient(180deg, #2c5e5c 0%, #1d4a48 50%, #143836 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 30px rgba(40, 120, 115, 0.25));
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 500;
+    color: rgba(30, 80, 78, 0.88);
+    letter-spacing: 12px;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    text-align: center;
+    font-size: 64px;
+    color: rgba(70, 110, 108, 0.55);
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+  }
+
+  .intro {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .intro p {
+    font-size: 64px;
+    line-height: 1.45;
+    color: rgba(45, 85, 83, 0.72);
+    font-weight: 500;
+  }
+
+  /* 区块标题 */
+  .section {
+    margin-bottom: 14px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+  .section-num {
+    font-size: 52px;
+    font-weight: 600;
+    color: rgba(160, 120, 50, 0.6);
+    font-family: 'Cinzel', serif;
+  }
+  .section-name {
+    font-size: 64px;
+    font-weight: 700;
+    color: #1d4a48;
+    letter-spacing: 3px;
+  }
+  .section-en {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    letter-spacing: 6px;
+    color: rgba(100, 130, 128, 0.4);
+  }
+  .section-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .section-line .seg {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(160,120,50,0.05), rgba(160,120,50,0.45), rgba(160,120,50,0.05));
+  }
+  .section-line .orn {
+    color: #b8893e;
+    font-size: 16px;
+    opacity: 0.7;
+  }
+
+  /* 刷新消耗卡片 */
+  .cost-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .cost-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(160, 120, 50, 0.25);
+    padding: 8px 36px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  .cost-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #b8893e, #8a6528);
+  }
+  .cost-label {
+    font-size: 64px;
+    color: rgba(140, 100, 42, 0.78);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .cost-value {
+    font-size: 64px;
+    font-weight: 700;
+    color: #1d4a48;
+    margin-bottom: 2px;
+  }
+  .cost-unit {
+    font-size: 64px;
+    color: rgba(70, 110, 108, 0.55);
+    font-weight: 400;
+  }
+
+  /* 概率条 */
+  .prob-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    margin: 0 0 14px;
+    border-top: 1px solid rgba(160, 120, 50, 0.18);
+    border-bottom: 1px solid rgba(160, 120, 50, 0.18);
+  }
+  .prob-bar span {
+    font-size: 64px;
+    color: rgba(120, 90, 40, 0.78);
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  /* 规则列表 */
+  .rules {
+    display: flex;
+    flex-direction: column;
+  }
+  .rule-item {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 8px 0;
+  }
+  .rule-num {
+    font-size: 56px;
+    font-weight: 700;
+    color: #b8893e;
+    font-family: 'Noto Serif SC', serif;
+    min-width: 64px;
+  }
+  .rule-text {
+    font-size: 64px;
+    color: rgba(30, 70, 68, 0.82);
+    font-weight: 500;
+  }
+
+  /* 立即开启 */
+  .open-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .open-card {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(160, 120, 50, 0.28);
+    padding: 14px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  .open-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #8a6528;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+  }
+  .open-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(160,120,50,0.4), transparent);
+    margin: 8px auto;
+    width: 60%;
+  }
+  .open-cost {
+    font-size: 64px;
+    font-weight: 700;
+    color: #1d4a48;
+    margin: 4px 0;
+  }
+  .open-desc {
+    font-size: 64px;
+    color: rgba(70, 110, 108, 0.6);
+    margin-top: 6px;
+    font-weight: 400;
+  }
+
+  /* 获取方式 */
+  .method-item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(160, 120, 50, 0.22);
+    padding: 10px 40px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .method-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #b8893e, #8a6528);
+  }
+  .method-num {
+    font-size: 56px;
+    font-weight: 700;
+    color: rgba(160, 120, 50, 0.55);
+    min-width: 60px;
+  }
+  .method-info .method-name {
+    font-size: 64px;
+    font-weight: 700;
+    color: #1d4a48;
+    margin-bottom: 2px;
+  }
+  .method-info .method-desc {
+    font-size: 64px;
+    color: rgba(70, 110, 108, 0.6);
+    font-weight: 400;
+  }
+
+  /* 二维码区 */
+  .qr-section {
+    margin-top: auto;
+    padding-top: 12px;
+  }
+  .qr-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .qr-divider .line {
+    width: 150px; height: 1px;
+    background: linear-gradient(90deg, transparent, #b8893e, transparent);
+  }
+  .qr-divider .dot {
+    width: 8px; height: 8px;
+    background: #b8893e;
+    transform: rotate(45deg);
+  }
+  .qr-title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: #1d4a48;
+    margin-bottom: 8px;
+  }
+  .qr-sub {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    letter-spacing: 6px;
+    color: rgba(160, 120, 50, 0.55);
+    margin-bottom: 20px;
+  }
+  .qr-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .qr-box {
+    position: relative;
+    padding: 24px;
+    background: #ffffff;
+    border: 2px solid rgba(160, 120, 50, 0.5);
+  }
+  .qr-box::before, .qr-box::after {
+    content: '';
+    position: absolute;
+    width: 36px; height: 36px;
+    border-color: #b8893e;
+  }
+  .qr-box::before {
+    top: -3px; left: -3px;
+    border-top: 4px solid #b8893e;
+    border-left: 4px solid #b8893e;
+  }
+  .qr-box::after {
+    bottom: -3px; right: -3px;
+    border-bottom: 4px solid #b8893e;
+    border-right: 4px solid #b8893e;
+  }
+  .qr-corner-tr, .qr-corner-bl {
+    position: absolute;
+    width: 36px; height: 36px;
+  }
+  .qr-corner-tr { top: -3px; right: -3px; border-top: 4px solid #b8893e; border-right: 4px solid #b8893e; }
+  .qr-corner-bl { bottom: -3px; left: -3px; border-bottom: 4px solid #b8893e; border-left: 4px solid #b8893e; }
+
+  #qrcode { display: flex; }
+  #qrcode img, #qrcode canvas { display: block; }
+
+  .qr-tip {
+    text-align: center;
+    font-size: 64px;
+    color: rgba(120, 90, 40, 0.65);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  /* 底部 */
+  .footer {
+    text-align: center;
+    border-top: 1px solid rgba(160, 120, 50, 0.22);
+    padding-top: 18px;
+  }
+  .footer-brand {
+    font-size: 64px;
+    font-weight: 600;
+    color: #8a6528;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  .footer-slogan {
+    font-size: 64px;
+    color: rgba(70, 110, 108, 0.5);
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="bg-glow g1"></div>
+  <div class="bg-glow g2"></div>
+  <div class="bg-glow g3"></div>
+  <div class="border-outer"></div>
+  <div class="border-inner"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <!-- 背景商店装饰元素 -->
+  <div class="deco d1">🎁</div>
+  <div class="deco d2">💎</div>
+  <div class="deco d3">🪙</div>
+  <div class="deco d4">🧪</div>
+  <div class="deco d5">🎀</div>
+  <div class="deco d6">💎</div>
+  <div class="deco d7">🎁</div>
+  <div class="deco d8">🪙</div>
+  <div class="deco d9">🧪</div>
+  <div class="deco d10">🎀</div>
+  <div class="sparkle s1">✦</div>
+  <div class="sparkle s2">✧</div>
+  <div class="sparkle s3">✦</div>
+  <div class="sparkle s4">✧</div>
+  <div class="sparkle s5">✦</div>
+  <div class="sparkle s6">✧</div>
+  <div class="sparkle s7">✦</div>
+  <div class="sparkle s8">✧</div>
+  <div class="sparkle s9">✦</div>
+  <div class="sparkle s10">✧</div>
+
+  <div class="container">
+    <div class="brand"><span class="diamond">✦</span> M Y S T E R Y &nbsp; S H O P <span class="diamond">✦</span></div>
+
+    <div class="divider-short">
+      <div class="line"></div>
+      <div class="dot"></div>
+      <div class="line"></div>
+    </div>
+
+    <h1 class="title">神秘商店</h1>
+    <div class="subtitle">月 光 的 神 秘 商 店</div>
+    <div class="tagline">— 珍藏 · 刷新 · 邂逅 —</div>
+
+    <div class="intro">
+      <p>当月光洒落，神秘商店悄然现身</p>
+      <p>用月光宝盒刷新珍藏，邂逅属于你的幸运</p>
+    </div>
+
+    <!-- 刷新消耗 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="section-num">I</span>
+          <span class="section-name">刷新消耗</span>
+        </div>
+        <span class="section-en">REFRESH COST</span>
+      </div>
+      <div class="section-line"><div class="seg"></div><span class="orn">❖</span><div class="seg"></div></div>
+      <div class="cost-grid">
+        <div class="cost-card">
+          <div class="cost-label">第一次</div>
+          <div class="cost-value">500 灵石</div>
+          <div class="cost-unit">灵石兑换</div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-label">第二次</div>
+          <div class="cost-value">5 月光宝盒</div>
+          <div class="cost-unit">月光宝盒</div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-label">第三次</div>
+          <div class="cost-value">10 月光宝盒</div>
+          <div class="cost-unit">月光宝盒</div>
+        </div>
+        <div class="cost-card">
+          <div class="cost-label">第四次起</div>
+          <div class="cost-value">20 月光宝盒</div>
+          <div class="cost-unit">月光宝盒</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prob-bar">
+      <span>✦ 高级藏品概率 · 随刷新次数增加而提高 ✦</span>
+    </div>
+
+    <!-- 商店规则 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="section-num">II</span>
+          <span class="section-name">商店规则</span>
+        </div>
+        <span class="section-en">SHOP RULES</span>
+      </div>
+      <div class="section-line"><div class="seg"></div><span class="orn">❖</span><div class="seg"></div></div>
+      <div class="rules">
+        <div class="rule-item"><span class="rule-num">①</span><span class="rule-text">藏品随机出现，定期更新，共 9 个藏品</span></div>
+        <div class="rule-item"><span class="rule-num">②</span><span class="rule-text">每次神秘商店出现时重置刷新次数</span></div>
+        <div class="rule-item"><span class="rule-num">③</span><span class="rule-text">藏品可用灵石购买，超值划算</span></div>
+        <div class="rule-item"><span class="rule-num">④</span><span class="rule-text">神秘商店每月随机出现两次</span></div>
+      </div>
+    </div>
+
+    <!-- 立即开启 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="section-num">III</span>
+          <span class="section-name">立即开启</span>
+        </div>
+        <span class="section-en">OPEN NOW</span>
+      </div>
+      <div class="section-line"><div class="seg"></div><span class="orn">❖</span><div class="seg"></div></div>
+      <div class="open-grid">
+        <div class="open-card">
+          <div class="open-title">个人开启</div>
+          <div class="open-line"></div>
+          <div class="open-cost">20 月光宝盒</div>
+          <div class="open-desc">立即为自己开启神秘商店</div>
+        </div>
+        <div class="open-card">
+          <div class="open-title">全群开启</div>
+          <div class="open-line"></div>
+          <div class="open-cost">50 月光宝盒</div>
+          <div class="open-desc">立即为全群开启并群内广播</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 月光宝盒获取 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <span class="section-num">IV</span>
+          <span class="section-name">月光宝盒获取</span>
+        </div>
+        <span class="section-en">HOW TO GET</span>
+      </div>
+      <div class="section-line"><div class="seg"></div><span class="orn">❖</span><div class="seg"></div></div>
+      <div class="method-item">
+        <span class="method-num">一</span>
+        <div class="method-info">
+          <div class="method-name">接取委托</div>
+          <div class="method-desc">完成委托任务即可获得月光宝盒</div>
+        </div>
+      </div>
+      <div class="method-item">
+        <span class="method-num">二</span>
+        <div class="method-info">
+          <div class="method-name">粉钻兑换</div>
+          <div class="method-desc">2 粉钻 = 1 月光宝盒</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 二维码 -->
+    <div class="qr-section">
+      <div class="qr-divider">
+        <div class="line"></div>
+        <div class="dot"></div>
+        <div class="line"></div>
+      </div>
+      <div class="qr-title">扫码进入神秘商店</div>
+      <div class="qr-sub">S C A N &nbsp; T O &nbsp; E N T E R</div>
+      <div class="qr-wrap">
+        <div class="qr-box">
+          <div class="qr-corner-tr"></div>
+          <div class="qr-corner-bl"></div>
+          <div id="qrcode"></div>
+        </div>
+      </div>
+      <div class="qr-tip">长按识别二维码 · 开启你的神秘之旅</div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-brand">着迷温馨小店 · 月光宝盒系列</div>
+      <div class="footer-slogan">愿每一次刷新，都是一场奇妙的邂逅</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://zhaomishop.github.io/mystery-shop/",
+    width: 380,
+    height: 380,
+    colorDark: "#143836",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+</script>
+</body>
+</html>
