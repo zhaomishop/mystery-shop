@@ -28,6 +28,7 @@ function migrateData(data) {
     delete data.refreshCode;
   }
   data.refreshCodes = (data.refreshCodes || []).map(c => ({
+    ...c,
     code: c.code || '',
     uses: c.uses != null ? c.uses : (c.maxUses || 0),
     maxUses: c.maxUses != null ? c.maxUses : (c.uses || 0)
@@ -247,12 +248,13 @@ function collectFormData() {
     };
   });
 
-  // 收集口令列表（次数直接从输入框读取）
+  // 收集口令列表（次数直接从输入框读取；保留该口令原有的刷新记录，避免累计次数被清空）
+  const prevCodes = currentData.refreshCodes || [];
   const codeItems = document.querySelectorAll('.code-item');
-  currentData.refreshCodes = Array.from(codeItems).map((item) => {
+  currentData.refreshCodes = Array.from(codeItems).map((item, idx) => {
     const code = item.querySelector('.code-text').value.trim();
     const uses = Math.max(0, parseInt(item.querySelector('.code-uses').value) || 0);
-    return { code, uses, maxUses: uses };
+    return { ...(prevCodes[idx] || {}), code, uses, maxUses: uses };
   }).filter(c => c.code); // 过滤掉空口令
 
   return currentData;
