@@ -78,12 +78,67 @@
     },
     {
       "code": "秋水123",
-      "uses": 1,
+      "uses": 0,
       "maxUses": 1,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "grid": [
+        {
+          "id": 93,
+          "icon": "🍀",
+          "name": "灵石2000（免费）",
+          "quality": 3
+        },
+        {
+          "id": 1,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 11,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 51,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
+        },
+        {
+          "id": 15,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        },
+        {
+          "id": 16,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        },
+        {
+          "id": 77,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        },
+        {
+          "id": 95,
+          "icon": "🍀",
+          "name": "公K双倍卡*1（399灵石）",
+          "quality": 3
+        },
+        {
+          "id": 51,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1792494225788,
+      "opened": true
     }
   ],
   "prizes": [
