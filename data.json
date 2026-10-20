@@ -2,7 +2,13 @@
   "title": "清月典阁",
   "subtitle": "月光的神秘商店",
   "probabilitySlope": 4,
-  "refreshCodes": [],
+  "refreshCodes": [
+    {
+      "code": "月光123",
+      "uses": 10,
+      "maxUses": 10
+    }
+  ],
   "prizes": [
     {
       "id": 1,
