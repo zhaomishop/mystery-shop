@@ -7,6 +7,11 @@
       "code": "月光123",
       "uses": 3,
       "maxUses": 3
+    },
+    {
+      "code": "春秋123",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "prizes": [
