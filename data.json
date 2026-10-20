@@ -6,175 +6,37 @@
     {
       "code": "月光123",
       "uses": 3,
-      "maxUses": 3,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 3
     },
     {
       "code": "春秋123",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "秋水123",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "美女456",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "屁屁111",
       "uses": 1,
-      "maxUses": 1,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 1
     },
     {
       "code": "被窝999",
       "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 94,
-          "icon": "🎁",
-          "name": "灵石1888（免费）",
-          "quality": 1
-        },
-        {
-          "id": 31,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3500灵石）",
-          "quality": 5
-        },
-        {
-          "id": 38,
-          "icon": "🔮",
-          "name": "基础自由马7天（16666灵石）",
-          "quality": 7
-        },
-        {
-          "id": 105,
-          "icon": "🎁",
-          "name": "灵石188（免费）",
-          "quality": 1
-        },
-        {
-          "id": 11,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 11,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 29,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3500灵石）",
-          "quality": 5
-        },
-        {
-          "id": 36,
-          "icon": "🔮",
-          "name": "六字前缀卡30天（38888灵石）",
-          "quality": 7
-        },
-        {
-          "id": 19,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792494714749,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "知秋456",
       "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 20,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 23,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 31,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3500灵石）",
-          "quality": 5
-        },
-        {
-          "id": 15,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 13,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 27,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2500灵石）",
-          "quality": 4
-        },
-        {
-          "id": 43,
-          "icon": "👑",
-          "name": "中级自由马7天（22222灵石）",
-          "quality": 8
-        },
-        {
-          "id": 22,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 21,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792494743898,
-      "opened": true
+      "maxUses": 0
     }
   ],
   "prizes": [
@@ -820,5 +682,6 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
-  ]
+  ],
+  "refreshCount": 0
 }
