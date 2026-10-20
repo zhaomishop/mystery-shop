@@ -6,248 +6,47 @@
     {
       "code": "月光123",
       "uses": 3,
-      "maxUses": 3,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 3
     },
     {
       "code": "春秋123",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "秋水123",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "美女456",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "屁屁111",
       "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 16,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 19,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 15,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 20,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 96,
-          "icon": "🎀",
-          "name": "语音双倍卡*2（666灵石）",
-          "quality": 2
-        },
-        {
-          "id": 14,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 35,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 75,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 104,
-          "icon": "🎁",
-          "name": "灵石188（免费）",
-          "quality": 1
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792494883923,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "被窝999",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "知秋456",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "冠希156",
       "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 23,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 17,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 51,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2500灵石）",
-          "quality": 4
-        },
-        {
-          "id": 15,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 76,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 107,
-          "icon": "🎁",
-          "name": "灵石188（免费）",
-          "quality": 1
-        },
-        {
-          "id": 70,
-          "icon": "🔮",
-          "name": "灵石1000（免费）",
-          "quality": 7
-        },
-        {
-          "id": 28,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2222灵石）",
-          "quality": 4
-        },
-        {
-          "id": 96,
-          "icon": "🎀",
-          "name": "语音双倍卡*2（666灵石）",
-          "quality": 2
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792494896605,
-      "opened": true
+      "maxUses": 0
     },
     {
       "code": "星野137",
       "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 35,
-          "icon": "💎",
-          "name": "公演双倍卡*5（3000灵石）",
-          "quality": 4
-        },
-        {
-          "id": 13,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 103,
-          "icon": "🎁",
-          "name": "灵石188（免费）",
-          "quality": 1
-        },
-        {
-          "id": 24,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 27,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2500灵石）",
-          "quality": 4
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 20,
-          "icon": "🍀",
-          "name": "粉钻*10（9000灵石）",
-          "quality": 3
-        },
-        {
-          "id": 83,
-          "icon": "🎁",
-          "name": "粉钻*2（免费）",
-          "quality": 1
-        },
-        {
-          "id": 5,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3500灵石）",
-          "quality": 5
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792494910635,
-      "opened": true
+      "maxUses": 0
     }
   ],
   "prizes": [
@@ -893,5 +692,6 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
-  ]
+  ],
+  "refreshCount": 0
 }
