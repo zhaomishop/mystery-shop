@@ -15,7 +15,7 @@
     {
       "code": "小七122",
       "uses": 0,
-      "maxUses": 2,
+      "maxUses": 0,
       "grid": [
         {
           "id": 93,
@@ -79,7 +79,7 @@
     {
       "code": "奶芙133",
       "uses": 0,
-      "maxUses": 1,
+      "maxUses": 0,
       "grid": [
         {
           "id": 99,
@@ -151,8 +151,8 @@
     },
     {
       "code": "新娘155",
-      "uses": 0,
-      "maxUses": 2,
+      "uses": 5,
+      "maxUses": 5,
       "grid": [
         {
           "id": 96,
@@ -857,5 +857,6 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
-  ]
+  ],
+  "refreshCount": 0
 }
