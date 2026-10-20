@@ -6,102 +6,27 @@
     {
       "code": "月光123",
       "uses": 3,
-      "maxUses": 3,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 3
     },
     {
       "code": "小七122",
       "uses": 2,
-      "maxUses": 2,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 2
     },
     {
       "code": "奶芙133",
       "uses": 1,
-      "maxUses": 1,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 1
     },
     {
       "code": "无趣144",
       "uses": 0,
-      "maxUses": 0,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "maxUses": 0
     },
     {
       "code": "新娘155",
-      "uses": 0,
-      "maxUses": 1,
-      "grid": [
-        {
-          "id": 81,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 82,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 97,
-          "icon": "🎁",
-          "name": "语音双倍卡*2（666灵石）",
-          "quality": 1
-        },
-        {
-          "id": 75,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 14,
-          "icon": "🎀",
-          "name": "粉钻*5（5000灵石）",
-          "quality": 2
-        },
-        {
-          "id": 75,
-          "icon": "🎁",
-          "name": "粉钻*2（2000灵石）",
-          "quality": 1
-        },
-        {
-          "id": 29,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3500灵石）",
-          "quality": 5
-        },
-        {
-          "id": 95,
-          "icon": "🍀",
-          "name": "公K双倍卡*1（399灵石）",
-          "quality": 3
-        },
-        {
-          "id": 28,
-          "icon": "💎",
-          "name": "采访双倍卡*10（2222灵石）",
-          "quality": 4
-        }
-      ],
-      "refreshCount": 1,
-      "refreshTime": 1792496148539,
-      "opened": true
+      "uses": 2,
+      "maxUses": 2
     }
   ],
   "prizes": [
@@ -747,5 +672,6 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
-  ]
+  ],
+  "refreshCount": 0
 }
