@@ -6,27 +6,102 @@
     {
       "code": "月光123",
       "uses": 3,
-      "maxUses": 3
+      "maxUses": 3,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "春秋123",
       "uses": 0,
-      "maxUses": 0
+      "maxUses": 0,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "秋水123",
       "uses": 0,
-      "maxUses": 0
+      "maxUses": 0,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     },
     {
       "code": "美女456",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 0,
+      "maxUses": 1,
+      "grid": [
+        {
+          "id": 99,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3500灵石）",
+          "quality": 5
+        },
+        {
+          "id": 96,
+          "icon": "🎀",
+          "name": "语音双倍卡*2（666灵石）",
+          "quality": 2
+        },
+        {
+          "id": 19,
+          "icon": "🎀",
+          "name": "粉钻*5（5000灵石）",
+          "quality": 2
+        },
+        {
+          "id": 105,
+          "icon": "🎁",
+          "name": "灵石188（免费）",
+          "quality": 1
+        },
+        {
+          "id": 104,
+          "icon": "🎁",
+          "name": "灵石188（免费）",
+          "quality": 1
+        },
+        {
+          "id": 29,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3500灵石）",
+          "quality": 5
+        },
+        {
+          "id": 93,
+          "icon": "🍀",
+          "name": "灵石2000（免费）",
+          "quality": 3
+        },
+        {
+          "id": 35,
+          "icon": "💎",
+          "name": "公演双倍卡*5（3000灵石）",
+          "quality": 4
+        },
+        {
+          "id": 28,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2222灵石）",
+          "quality": 4
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1792494508655,
+      "opened": true
     },
     {
       "code": "屁屁111",
       "uses": 1,
-      "maxUses": 1
+      "maxUses": 1,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -672,6 +747,5 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
-  ],
-  "refreshCount": 0
+  ]
 }
