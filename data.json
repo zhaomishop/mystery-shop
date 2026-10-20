@@ -569,5 +569,17 @@
       "quality": 1
     }
   ],
-  "refreshCount": 0
+  "refreshCount": 0,
+  "opened": false,
+  "currentGrid": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
 }
