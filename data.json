@@ -151,12 +151,67 @@
     },
     {
       "code": "新娘155",
-      "uses": 2,
+      "uses": 1,
       "maxUses": 2,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "grid": [
+        {
+          "id": 23,
+          "icon": "🍀",
+          "name": "粉钻*10（9000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 27,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
+        },
+        {
+          "id": 93,
+          "icon": "🍀",
+          "name": "灵石2000（免费）",
+          "quality": 3
+        },
+        {
+          "id": 8,
+          "icon": "👑",
+          "name": "三字冠命卡7天（5666灵石）",
+          "quality": 8
+        },
+        {
+          "id": 23,
+          "icon": "🍀",
+          "name": "粉钻*10（9000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 27,
+          "icon": "💎",
+          "name": "采访双倍卡*10（2500灵石）",
+          "quality": 4
+        },
+        {
+          "id": 3,
+          "icon": "🍀",
+          "name": "粉钻*10（9000灵石）",
+          "quality": 3
+        },
+        {
+          "id": 81,
+          "icon": "🎁",
+          "name": "粉钻*2（2000灵石）",
+          "quality": 1
+        },
+        {
+          "id": 35,
+          "icon": "💎",
+          "name": "公演双倍卡*5（3000灵石）",
+          "quality": 4
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1792496834164,
+      "opened": true
     }
   ],
   "prizes": [
