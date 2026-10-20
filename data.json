@@ -570,9 +570,15 @@
     },
     {
       "id": 95,
-      "icon": "🎀",
+      "icon": "🍀",
       "name": "公K双倍卡（399灵石）",
-      "quality": 2
+      "quality": 3
+    },
+    {
+      "id": 96,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0,
