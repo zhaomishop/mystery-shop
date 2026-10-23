@@ -152,7 +152,7 @@
     {
       "code": "新娘155",
       "uses": 2,
-      "maxUses": 5,
+      "maxUses": 2,
       "grid": [
         {
           "id": 99,
@@ -857,5 +857,18 @@
       "name": "灵石188（免费）",
       "quality": 1
     }
+  ],
+  "refreshCount": 0,
+  "opened": false,
+  "currentGrid": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
   ]
 }
