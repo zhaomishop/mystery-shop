@@ -690,15 +690,15 @@
     },
     {
       "id": 115,
-      "icon": "🎁",
+      "icon": "🔮",
       "name": "新奖品",
-      "quality": 1
+      "quality": 7
     },
     {
       "id": 116,
-      "icon": "🎁",
+      "icon": "🔮",
       "name": "新奖品",
-      "quality": 1
+      "quality": 7
     }
   ],
   "refreshCount": 0,
