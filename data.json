@@ -645,6 +645,18 @@
       "icon": "🎁",
       "name": "灵石200（免费）",
       "quality": 1
+    },
+    {
+      "id": 108,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 109,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0,
