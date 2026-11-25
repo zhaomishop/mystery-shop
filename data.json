@@ -648,12 +648,24 @@
     },
     {
       "id": 108,
+      "icon": "💝",
+      "name": "新奖品",
+      "quality": 6
+    },
+    {
+      "id": 109,
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
     },
     {
-      "id": 109,
+      "id": 110,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
+    },
+    {
+      "id": 111,
       "icon": "🎁",
       "name": "新奖品",
       "quality": 1
