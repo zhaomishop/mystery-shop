@@ -660,15 +660,15 @@
     },
     {
       "id": 110,
-      "icon": "💝",
+      "icon": "🔮",
       "name": "个人卡9折（58888灵石）",
-      "quality": 6
+      "quality": 7
     },
     {
       "id": 111,
-      "icon": "🎁",
+      "icon": "🔮",
       "name": "个人卡9折（58888灵石）",
-      "quality": 1
+      "quality": 7
     }
   ],
   "refreshCount": 0,
