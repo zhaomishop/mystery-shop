@@ -681,6 +681,12 @@
       "icon": "🔮",
       "name": "新奖品",
       "quality": 7
+    },
+    {
+      "id": 114,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0,
