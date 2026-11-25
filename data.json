@@ -669,6 +669,12 @@
       "icon": "🔮",
       "name": "个人卡9折（22222灵石）",
       "quality": 7
+    },
+    {
+      "id": 112,
+      "icon": "🎁",
+      "name": "新奖品",
+      "quality": 1
     }
   ],
   "refreshCount": 0,
