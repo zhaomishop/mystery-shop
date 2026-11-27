@@ -6,7 +6,7 @@
     {
       "code": "被窝003",
       "uses": 1,
-      "maxUses": 2,
+      "maxUses": 1,
       "grid": [
         {
           "id": 28,
@@ -70,7 +70,7 @@
     {
       "code": "屁屁004",
       "uses": 1,
-      "maxUses": 2,
+      "maxUses": 1,
       "grid": [
         {
           "id": 96,
@@ -829,5 +829,6 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
