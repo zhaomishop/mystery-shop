@@ -66,6 +66,11 @@
       "refreshCount": 1,
       "refreshTime": 1795778246165,
       "opened": true
+    },
+    {
+      "code": "被窝003",
+      "uses": 1,
+      "maxUses": 1
     }
   ],
   "prizes": [
