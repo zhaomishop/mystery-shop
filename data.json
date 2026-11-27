@@ -5,13 +5,76 @@
   "refreshCodes": [
     {
       "code": "安禾012",
-      "uses": 2,
-      "maxUses": 2
+      "uses": 1,
+      "maxUses": 2,
+      "grid": [
+        {
+          "id": 50,
+          "icon": "🍀",
+          "name": "粉钻*10（8888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 106,
+          "icon": "🎁",
+          "name": "灵石200（免费）",
+          "quality": 1
+        },
+        {
+          "id": 72,
+          "icon": "🎁",
+          "name": "粉钻*2（1888灵石）",
+          "quality": 1
+        },
+        {
+          "id": 81,
+          "icon": "🎁",
+          "name": "粉钻*2（1888灵石）",
+          "quality": 1
+        },
+        {
+          "id": 77,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 35,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 29,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3000灵石）",
+          "quality": 5
+        },
+        {
+          "id": 2,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 2,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1795782093112,
+      "opened": true
     },
     {
       "code": "知秋013",
       "uses": 0,
-      "maxUses": 0
+      "maxUses": 0,
+      "grid": [],
+      "refreshCount": 0,
+      "refreshTime": 0,
+      "opened": false
     }
   ],
   "prizes": [
@@ -711,6 +774,5 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ],
-  "refreshCount": 0
+  ]
 }
