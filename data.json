@@ -79,7 +79,7 @@
     {
       "code": "神采007",
       "uses": 1,
-      "maxUses": 2,
+      "maxUses": 1,
       "grid": [
         {
           "id": 34,
@@ -856,5 +856,6 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
