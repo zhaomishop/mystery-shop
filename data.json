@@ -157,6 +157,11 @@
       "refreshCount": 0,
       "refreshTime": 0,
       "opened": false
+    },
+    {
+      "code": "屁屁010",
+      "uses": 2,
+      "maxUses": 2
     }
   ],
   "prizes": [
