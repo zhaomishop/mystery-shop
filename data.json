@@ -160,7 +160,7 @@
     },
     {
       "code": "屁屁010",
-      "uses": 1,
+      "uses": 0,
       "maxUses": 2,
       "grid": [
         {
@@ -170,56 +170,56 @@
           "quality": 4
         },
         {
-          "id": 17,
-          "icon": "🎀",
-          "name": "粉钻*5（4888灵石）",
-          "quality": 2
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（8888灵石）",
-          "quality": 3
-        },
-        {
-          "id": 50,
-          "icon": "🍀",
-          "name": "粉钻*10（8888灵石）",
-          "quality": 3
-        },
-        {
-          "id": 27,
+          "id": 26,
           "icon": "💎",
           "name": "文豪双倍卡*5（1888灵石）",
           "quality": 4
         },
         {
-          "id": 77,
-          "icon": "🎀",
-          "name": "粉钻*5（4888灵石）",
-          "quality": 2
+          "id": 26,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
         },
         {
-          "id": 99,
+          "id": 30,
           "icon": "🌟",
           "name": "月光宝盒*2（3000灵石）",
           "quality": 5
         },
         {
-          "id": 103,
+          "id": 39,
           "icon": "🎁",
-          "name": "灵石200（免费）",
+          "name": "灵石1000（500灵石）",
           "quality": 1
         },
         {
-          "id": 5,
-          "icon": "🌟",
-          "name": "月光宝盒*2（3000灵石）",
-          "quality": 5
+          "id": 95,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 25,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 50,
+          "icon": "🍀",
+          "name": "粉钻*10（8888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 83,
+          "icon": "🍀",
+          "name": "粉钻*2（免费）",
+          "quality": 3
         }
       ],
-      "refreshCount": 1,
-      "refreshTime": 1795779747112,
+      "refreshCount": 2,
+      "refreshTime": 1795779754427,
       "opened": true
     }
   ],
