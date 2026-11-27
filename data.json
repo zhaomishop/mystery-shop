@@ -5,8 +5,67 @@
   "refreshCodes": [
     {
       "code": "飒飒001",
-      "uses": 1,
-      "maxUses": 1
+      "uses": 0,
+      "maxUses": 1,
+      "grid": [
+        {
+          "id": 23,
+          "icon": "🍀",
+          "name": "粉钻*10（8888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 94,
+          "icon": "🎀",
+          "name": "灵石1888（免费）",
+          "quality": 2
+        },
+        {
+          "id": 95,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 94,
+          "icon": "🎀",
+          "name": "灵石1888（免费）",
+          "quality": 2
+        },
+        {
+          "id": 16,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 96,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 16,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 39,
+          "icon": "🎁",
+          "name": "灵石1000（500灵石）",
+          "quality": 1
+        },
+        {
+          "id": 109,
+          "icon": "💝",
+          "name": "男/女神卡9折（18888灵石）",
+          "quality": 6
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1795778246165,
+      "opened": true
     }
   ],
   "prizes": [
@@ -706,18 +765,5 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ],
-  "refreshCount": 0,
-  "opened": false,
-  "currentGrid": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
   ]
 }
