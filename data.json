@@ -4,9 +4,9 @@
   "probabilitySlope": 3,
   "refreshCodes": [
     {
-      "code": "飒飒001",
+      "code": "春秋002",
       "uses": 0,
-      "maxUses": 1,
+      "maxUses": 0,
       "grid": [
         {
           "id": 23,
@@ -765,5 +765,6 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ]
+  ],
+  "refreshCount": 0
 }
