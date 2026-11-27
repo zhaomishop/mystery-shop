@@ -5,8 +5,8 @@
   "refreshCodes": [
     {
       "code": "春秋002",
-      "uses": 0,
-      "maxUses": 0,
+      "uses": 1,
+      "maxUses": 1,
       "grid": [
         {
           "id": 23,
