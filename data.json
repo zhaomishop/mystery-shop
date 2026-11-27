@@ -14,12 +14,67 @@
     },
     {
       "code": "屁屁004",
-      "uses": 2,
+      "uses": 1,
       "maxUses": 2,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "grid": [
+        {
+          "id": 96,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 4,
+          "icon": "💎",
+          "name": "文豪双倍卡*2（800灵石）",
+          "quality": 4
+        },
+        {
+          "id": 26,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 19,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 99,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3000灵石）",
+          "quality": 5
+        },
+        {
+          "id": 96,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 35,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 96,
+          "icon": "🎀",
+          "name": "公K双倍卡*1（免费）",
+          "quality": 2
+        },
+        {
+          "id": 2,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1795779090054,
+      "opened": true
     }
   ],
   "prizes": [
@@ -719,6 +774,5 @@
       "name": "官宣9折卡（19999灵石）",
       "quality": 8
     }
-  ],
-  "refreshCount": 0
+  ]
 }
