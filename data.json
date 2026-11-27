@@ -5,12 +5,67 @@
   "refreshCodes": [
     {
       "code": "被窝003",
-      "uses": 2,
+      "uses": 1,
       "maxUses": 2,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "grid": [
+        {
+          "id": 28,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 109,
+          "icon": "💝",
+          "name": "男/女神卡9折（18888灵石）",
+          "quality": 6
+        },
+        {
+          "id": 78,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 20,
+          "icon": "🍀",
+          "name": "粉钻*10（8888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 29,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3000灵石）",
+          "quality": 5
+        },
+        {
+          "id": 94,
+          "icon": "🎀",
+          "name": "灵石1888（免费）",
+          "quality": 2
+        },
+        {
+          "id": 97,
+          "icon": "🎁",
+          "name": "公K双倍卡*1（300灵石）",
+          "quality": 1
+        },
+        {
+          "id": 50,
+          "icon": "🍀",
+          "name": "粉钻*10（8888灵石）",
+          "quality": 3
+        },
+        {
+          "id": 31,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3000灵石）",
+          "quality": 5
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1795779153626,
+      "opened": true
     },
     {
       "code": "屁屁004",
