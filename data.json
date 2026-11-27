@@ -197,12 +197,67 @@
     },
     {
       "code": "星野006",
-      "uses": 2,
+      "uses": 1,
       "maxUses": 2,
-      "grid": [],
-      "refreshCount": 0,
-      "refreshTime": 0,
-      "opened": false
+      "grid": [
+        {
+          "id": 93,
+          "icon": "🍀",
+          "name": "灵石2000（免费）",
+          "quality": 3
+        },
+        {
+          "id": 29,
+          "icon": "🌟",
+          "name": "月光宝盒*2（3000灵石）",
+          "quality": 5
+        },
+        {
+          "id": 18,
+          "icon": "🎀",
+          "name": "粉钻*5（4888灵石）",
+          "quality": 2
+        },
+        {
+          "id": 93,
+          "icon": "🍀",
+          "name": "灵石2000（免费）",
+          "quality": 3
+        },
+        {
+          "id": 4,
+          "icon": "💎",
+          "name": "文豪双倍卡*2（800灵石）",
+          "quality": 4
+        },
+        {
+          "id": 97,
+          "icon": "🎁",
+          "name": "公K双倍卡*1（300灵石）",
+          "quality": 1
+        },
+        {
+          "id": 25,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        },
+        {
+          "id": 4,
+          "icon": "💎",
+          "name": "文豪双倍卡*2（800灵石）",
+          "quality": 4
+        },
+        {
+          "id": 28,
+          "icon": "💎",
+          "name": "文豪双倍卡*5（1888灵石）",
+          "quality": 4
+        }
+      ],
+      "refreshCount": 1,
+      "refreshTime": 1795779291451,
+      "opened": true
     }
   ],
   "prizes": [
